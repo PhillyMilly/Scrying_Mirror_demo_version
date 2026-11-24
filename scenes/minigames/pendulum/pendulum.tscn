@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp8x1mrio2l03"]
+
+[ext_resource type="Texture2D" uid="uid://cuu1nhpptasac" path="res://assets/sprites/minigames/pendulum/pendulum.png" id="1_h63em"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pajg7"]
+radius = 14.0
+height = 58.0
+
+[node name="pendulum" type="RigidBody2D"]
+mass = 2.0
+
+[node name="Pendulum" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 7)
+scale = Vector2(0.984848, 1)
+texture = ExtResource("1_h63em")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_pajg7")

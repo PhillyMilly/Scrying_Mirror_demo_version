@@ -1,0 +1,389 @@
+[gd_scene load_steps=31 format=3 uid="uid://b2pr02s6csv7v"]
+
+[ext_resource type="Script" uid="uid://tgxgk3yaia8v" path="res://scripts/minigames/ouija_board/ouija_board.gd" id="1_kfcwm"]
+[ext_resource type="Texture2D" uid="uid://droq4qpgpy7f3" path="res://assets/sprites/minigames/ouija/ouija_board.png" id="2_dy752"]
+[ext_resource type="PackedScene" uid="uid://8n5hyy3ph0k2" path="res://scenes/minigames/ouija_board/letter.tscn" id="2_hg46t"]
+[ext_resource type="PackedScene" uid="uid://b6mmg6p84dhyd" path="res://scenes/mouse.tscn" id="3_dcisx"]
+[ext_resource type="Texture2D" uid="uid://ybnutqkndsc3" path="res://assets/sprites/minigames/ouija/ouija_arrow.png" id="4_dcisx"]
+[ext_resource type="Script" uid="uid://cfmr2fna6w4sl" path="res://scripts/minigames/ouija_board/arrow.gd" id="4_ode3c"]
+[ext_resource type="Texture2D" uid="uid://bubk2foxrtpmb" path="res://assets/trash/ouija_board/target.png" id="5_530d5"]
+[ext_resource type="Texture2D" uid="uid://dmieg3tgddbxf" path="res://assets/trash/ouija_board/timer.png" id="8_4fnhk"]
+[ext_resource type="Script" uid="uid://drtsims2whvg6" path="res://scripts/minigames/ouija_board/time_indicator.gd" id="9_sb362"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ode3c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_530d5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y5bm8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4fnhk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umyi2"]
+atlas = ExtResource("4_dcisx")
+region = Rect2(0, 0, 30, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w16f5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umyi2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5bm8"]
+radius = 4.12311
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5bm8"]
+atlas = ExtResource("5_530d5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fnhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5bm8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_530d5"]
+radius = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cafs3"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekm1n"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixgi4"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxx5b"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8meg8"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mha85"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3o45"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yco0a"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewiss"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekxs6"]
+atlas = ExtResource("8_4fnhk")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6qj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cafs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekm1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixgi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxx5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8meg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mha85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3o45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yco0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewiss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekxs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekxs6")
+}],
+"loop": false,
+"name": &"timer",
+"speed": 5.0
+}]
+
+[node name="OuijaBoard" type="Node2D"]
+script = ExtResource("1_kfcwm")
+
+[node name="Board" type="Sprite2D" parent="."]
+texture = ExtResource("2_dy752")
+
+[node name="Border" type="StaticBody2D" parent="Board"]
+
+[node name="Bottom" type="CollisionShape2D" parent="Board/Border"]
+position = Vector2(0, 150)
+shape = SubResource("WorldBoundaryShape2D_ode3c")
+
+[node name="Up" type="CollisionShape2D" parent="Board/Border"]
+position = Vector2(0, -150)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_530d5")
+
+[node name="Left" type="CollisionShape2D" parent="Board/Border"]
+position = Vector2(-200, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_y5bm8")
+
+[node name="Right" type="CollisionShape2D" parent="Board/Border"]
+position = Vector2(200, 0)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_4fnhk")
+
+[node name="OuijaArrow" type="CharacterBody2D" parent="."]
+position = Vector2(0, 91)
+input_pickable = true
+script = ExtResource("4_ode3c")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="OuijaArrow"]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_w16f5")
+
+[node name="Collision" type="CollisionShape2D" parent="OuijaArrow"]
+shape = SubResource("CircleShape2D_y5bm8")
+
+[node name="Mouse" parent="." instance=ExtResource("3_dcisx")]
+
+[node name="Target" type="Area2D" parent="."]
+position = Vector2(0, 91)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Target"]
+scale = Vector2(0.270833, 0.270833)
+sprite_frames = SubResource("SpriteFrames_4fnhk")
+
+[node name="Collision" type="CollisionShape2D" parent="Target"]
+position = Vector2(0, -123)
+shape = SubResource("CircleShape2D_530d5")
+
+[node name="Letters" type="Node2D" parent="."]
+
+[node name="a" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-79, -18)
+letter = "a"
+
+[node name="b" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-59, -28)
+letter = "b"
+
+[node name="c" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-40, -34)
+letter = "c"
+
+[node name="d" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-19, -39)
+letter = "d"
+
+[node name="e" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(0, -40)
+letter = "e"
+
+[node name="f" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(19, -38)
+letter = "f"
+
+[node name="g" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(39, -34)
+letter = "g"
+
+[node name="h" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(60, -26)
+letter = "h"
+
+[node name="i" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(80, -19)
+letter = "i"
+
+[node name="j" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-80, -2)
+letter = "j"
+
+[node name="k" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-60, -10)
+letter = "k"
+
+[node name="l" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-41, -17)
+letter = "l"
+
+[node name="m" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-20, -21)
+letter = "m"
+
+[node name="n" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(0, -23)
+letter = "n"
+
+[node name="o" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(20, -20)
+letter = "o"
+
+[node name="p" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(39, -18)
+letter = "p"
+
+[node name="q" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(57, -10)
+letter = "q"
+
+[node name="r" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(78, -1)
+letter = "r"
+
+[node name="t" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-50, 7)
+letter = "t"
+
+[node name="s" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-69, 15)
+letter = "s"
+
+[node name="u" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-30, 0)
+letter = "u"
+
+[node name="v" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-11, -4)
+letter = "v"
+
+[node name="w" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(10, -5)
+letter = "w"
+
+[node name="x" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(30, 0)
+letter = "x"
+
+[node name="y" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(49, 5)
+letter = "y"
+
+[node name="z" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(69, 16)
+letter = "z"
+
+[node name="0" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-61, 44)
+letter = "0"
+
+[node name="1" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-47, 44)
+letter = "1"
+
+[node name="2" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-34, 44)
+letter = "2"
+
+[node name="3" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-21, 44)
+letter = "3"
+
+[node name="4" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(-8, 44)
+letter = "4"
+
+[node name="5" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(5, 44)
+letter = "5"
+
+[node name="6" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(18, 44)
+letter = "6"
+
+[node name="7" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(33, 44)
+letter = "7"
+
+[node name="8" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(48, 44)
+letter = "8"
+
+[node name="9" parent="Letters" instance=ExtResource("2_hg46t")]
+position = Vector2(61, 44)
+letter = "9"
+
+[node name="TimeIndicator" type="AnimatedSprite2D" parent="."]
+position = Vector2(-79, -20)
+scale = Vector2(0.223958, 0.223958)
+sprite_frames = SubResource("SpriteFrames_r6qj7")
+animation = &"timer"
+script = ExtResource("9_sb362")
+
+[node name="Timer" type="Timer" parent="TimeIndicator"]
+wait_time = 1.2
+
+[node name="FinishTimer" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="body_entered" from="Mouse" to="OuijaArrow" method="_on_mouse_body_entered"]
+[connection signal="body_exited" from="Mouse" to="OuijaArrow" method="_on_mouse_body_exited"]
+[connection signal="body_entered" from="Letters/a" to="Letters/a" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/b" to="Letters/b" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/c" to="Letters/c" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/d" to="Letters/d" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/e" to="Letters/e" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/f" to="Letters/f" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/g" to="Letters/g" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/h" to="Letters/h" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/i" to="Letters/i" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/j" to="Letters/j" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/k" to="Letters/k" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/l" to="Letters/l" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/m" to="Letters/m" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/n" to="Letters/n" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/o" to="Letters/o" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/p" to="Letters/p" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/q" to="Letters/q" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/r" to="Letters/r" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/t" to="Letters/t" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/s" to="Letters/s" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/u" to="Letters/u" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/v" to="Letters/v" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/w" to="Letters/w" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/x" to="Letters/x" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/y" to="Letters/y" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/z" to="Letters/z" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/0" to="Letters/0" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/1" to="Letters/1" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/2" to="Letters/2" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/3" to="Letters/3" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/4" to="Letters/4" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/5" to="Letters/5" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/6" to="Letters/6" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/7" to="Letters/7" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/8" to="Letters/8" method="_on_body_entered"]
+[connection signal="body_entered" from="Letters/9" to="Letters/9" method="_on_body_entered"]
+[connection signal="timeout" from="TimeIndicator/Timer" to="OuijaArrow" method="_on_timer_timeout"]
+[connection signal="timeout" from="FinishTimer" to="OuijaArrow" method="_on_finish_timer_timeout"]

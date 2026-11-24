@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmxsov6ho1jfk"]
+
+[ext_resource type="Script" uid="uid://dmf6c03324qc0" path="res://scripts/minigames/pendulum/rope_holder.gd" id="1_gqc54"]
+[ext_resource type="Texture2D" uid="uid://btgiafowrs1k4" path="res://assets/sprites/minigames/pendulum/holder.png" id="2_4di1v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqc54"]
+radius = 8.0
+
+[node name="rope_holder" type="CharacterBody2D"]
+script = ExtResource("1_gqc54")
+
+[node name="PendulumHolder" type="Sprite2D" parent="."]
+texture = ExtResource("2_4di1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gqc54")

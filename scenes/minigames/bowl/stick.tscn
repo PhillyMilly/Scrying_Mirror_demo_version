@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4vt10ou4642l"]
+
+[ext_resource type="Script" uid="uid://de0tjxi242k0r" path="res://scripts/minigames/bowl/stick.gd" id="1_1hssm"]
+[ext_resource type="Texture2D" uid="uid://bnm10t31yjp3t" path="res://assets/sprites/minigames/bowl/stick.png" id="2_gahw4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rp7ts"]
+radius = 16.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_1hssm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, -24)
+shape = SubResource("CircleShape2D_rp7ts")
+
+[node name="Stick" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
+texture = ExtResource("2_gahw4")

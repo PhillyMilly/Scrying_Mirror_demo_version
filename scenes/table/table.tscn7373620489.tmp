@@ -1,0 +1,133 @@
+[gd_scene load_steps=9 format=3 uid="uid://dp8t3lypsy2xk"]
+
+[ext_resource type="Texture2D" uid="uid://bugh1sw2ikfke" path="res://assets/trash/test/placeholder_table.png" id="1_02ppr"]
+[ext_resource type="Script" uid="uid://blkyy5k7g7mim" path="res://scripts/table/job_manager.gd" id="2_0y6hh"]
+[ext_resource type="Resource" uid="uid://daw6uqqvcahrs" path="res://resources/ShyGhostData.tres" id="3_8xt64"]
+[ext_resource type="PackedScene" uid="uid://cpr5g3chi1mq3" path="res://scenes/table/minigame_manager.tscn" id="3_qxbf1"]
+[ext_resource type="Script" uid="uid://dadmj4u4upb4h" path="res://scripts/table/tool_ui.gd" id="3_wpgb8"]
+[ext_resource type="Resource" uid="uid://b4dqaaakxl7fh" path="res://resources/NormalGhostData.tres" id="4_nfafe"]
+[ext_resource type="PackedScene" uid="uid://bw7qc2farg8tx" path="res://scenes/ghost_bar_system/GhostBarManager.tscn" id="4_wpgb8"]
+[ext_resource type="Resource" uid="uid://b354latyvq7xr" path="res://resources/AggressiveGhostData.tres" id="5_6tgsi"]
+
+[node name="Table" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_02ppr")
+
+[node name="JobManager" type="Node" parent="."]
+script = ExtResource("2_0y6hh")
+shy_ghost_data = ExtResource("3_8xt64")
+normal_ghost_data = ExtResource("4_nfafe")
+aggressive_ghost_data = ExtResource("5_6tgsi")
+
+[node name="MinigameManager" parent="JobManager" instance=ExtResource("3_qxbf1")]
+
+[node name="MinigameViewportContainer" type="SubViewportContainer" parent="JobManager/MinigameManager"]
+layout_mode = 0
+offset_left = -513.0
+offset_top = -508.0
+offset_right = 511.0
+offset_bottom = 260.0
+
+[node name="GhostBarManager" parent="JobManager" instance=ExtResource("4_wpgb8")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_wpgb8")
+
+[node name="ButtonContainer" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Contact" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Candlelight" type="Button" parent="UI/ButtonContainer/Contact"]
+layout_mode = 0
+offset_left = -778.0
+offset_top = -411.0
+offset_right = -716.0
+offset_bottom = -369.0
+text = "Candle
+"
+
+[node name="Maintain" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bowl" type="Button" parent="UI/ButtonContainer/Maintain"]
+layout_mode = 0
+offset_left = -766.0
+offset_top = -260.0
+offset_right = -720.0
+offset_bottom = -218.0
+text = "Bowl
+"
+
+[node name="Communication" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pendulum" type="Button" parent="UI/ButtonContainer/Communication"]
+layout_mode = 0
+offset_left = -886.0
+offset_top = -112.0
+offset_right = -788.0
+offset_bottom = -70.0
+text = "Pendulumn"
+
+[node name="Ouija" type="Button" parent="UI/ButtonContainer/Communication"]
+layout_mode = 0
+offset_left = -759.0
+offset_top = -111.0
+offset_right = -659.0
+offset_bottom = -69.0
+text = "Ouija Board"
+
+[node name="Close_Minigame" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 0
+offset_left = -804.0
+offset_top = 65.0
+offset_right = -659.0
+offset_bottom = 109.0
+text = "CLOSE MINIGAME"
+
+[node name="Contact" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -880.0
+offset_top = -468.0
+offset_right = -603.0
+offset_bottom = -427.0
+text = "Contact"
+horizontal_alignment = 1
+
+[node name="Maintain" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -880.0
+offset_top = -325.0
+offset_right = -603.0
+offset_bottom = -276.0
+text = "Maintain
+"
+horizontal_alignment = 1
+
+[node name="Communicate" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -880.0
+offset_top = -173.0
+offset_right = -603.0
+offset_bottom = -124.0
+text = "Communicate
+"
+horizontal_alignment = 1

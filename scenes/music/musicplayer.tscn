@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://yi87g8i853x6"]
+
+[ext_resource type="AudioStream" uid="uid://2ochdshlcwqb" path="res://assets/music/chill_bill_no_contact04.wav" id="1_ixqel"]
+[ext_resource type="AudioStream" uid="uid://cxjbaui0ftcwm" path="res://assets/music/chill_bill_contact05.wav" id="2_7y12n"]
+
+[node name="musicplayer" type="Node"]
+
+[node name="ChillBillNoContact" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ixqel")
+volume_db = -80.0
+autoplay = true
+
+[node name="ChillBillContact" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7y12n")
+volume_db = -80.0
+autoplay = true

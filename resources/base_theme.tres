@@ -1,0 +1,41 @@
+[gd_resource type="Theme" format=3 uid="uid://dvhf6148iy666"]
+
+[ext_resource type="FontFile" uid="uid://bo3v2tvdprj2n" path="res://assets/fonts/Kenney Mini.ttf" id="1_x504n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x504n"]
+bg_color = Color(0.223529, 0.168627, 0.207843, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ffvk"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[resource]
+default_font_size = 8
+Button/colors/font_color = Color(0.819608, 0.74902, 0.690196, 1)
+Button/colors/font_disabled_color = Color(0.266667, 0.278431, 0.376471, 1)
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("1_x504n")
+Label/colors/font_color = Color(0.819608, 0.74902, 0.690196, 1)
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_x504n")
+ProgressBar/colors/font_color = Color(0.819608, 0.74902, 0.690196, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/fonts/font = ExtResource("1_x504n")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_x504n")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1ffvk")
+TooltipLabel/colors/font_color = Color(0.819608, 0.74902, 0.690196, 1)
+TooltipLabel/font_sizes/font_size = 8
+TooltipLabel/fonts/font = ExtResource("1_x504n")

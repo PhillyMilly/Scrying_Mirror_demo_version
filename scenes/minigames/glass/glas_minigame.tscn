@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpalhtfl70exo"]
+
+[ext_resource type="Script" uid="uid://d3bb0glp1emic" path="res://scripts/minigames/glas/glas_minigame.gd" id="1_lpvnq"]
+[ext_resource type="Texture2D" uid="uid://dldlt2dxdwwjv" path="res://assets/sprites/minigames/minigames_table_bg.png" id="3_1syhh"]
+[ext_resource type="Texture2D" uid="uid://cerfmm2nw7xy8" path="res://assets/sprites/minigames/glass/Glass_spritet.png" id="3_escxq"]
+[ext_resource type="Script" uid="uid://c3xnm4r6ikuh3" path="res://scenes/minigames/glass/glas.gd" id="3_vuv0x"]
+[ext_resource type="PackedScene" uid="uid://b6mmg6p84dhyd" path="res://scenes/mouse.tscn" id="4_escxq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pb8i"]
+size = Vector2(62, 86)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1syhh"]
+distance = -111.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_escxq"]
+distance = -156.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vuv0x"]
+distance = -156.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sut84"]
+distance = -128.0
+
+[node name="glas_minigame" type="Node2D"]
+script = ExtResource("1_lpvnq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_1syhh")
+
+[node name="glas" type="CharacterBody2D" parent="."]
+script = ExtResource("3_vuv0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="glas"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_3pb8i")
+
+[node name="Glas" type="Sprite2D" parent="glas"]
+position = Vector2(0, -8)
+texture = ExtResource("3_escxq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Mouse" parent="." instance=ExtResource("4_escxq")]
+
+[node name="WorldBorder" type="StaticBody2D" parent="."]
+
+[node name="Bottom" type="CollisionShape2D" parent="WorldBorder"]
+shape = SubResource("WorldBoundaryShape2D_1syhh")
+
+[node name="Left" type="CollisionShape2D" parent="WorldBorder"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_escxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_vuv0x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_sut84")
+
+[connection signal="body_entered" from="Mouse" to="." method="_on_glas_body_entered"]
+[connection signal="body_exited" from="Mouse" to="." method="_on_glas_body_exited"]

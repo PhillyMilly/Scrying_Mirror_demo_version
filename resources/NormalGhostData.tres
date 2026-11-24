@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="GhostData" load_steps=2 format=3 uid="uid://b4dqaaakxl7fh"]
+
+[ext_resource type="Script" uid="uid://wf4xc5i0t2ag" path="res://scripts/ghost_bar_system/ghost_data.gd" id="1_73el0"]
+
+[resource]
+script = ExtResource("1_73el0")
+ghost_type = 0
+maintain_multiplier = 1.0
+aggression_multiplier = 1.0
+contact_values = {
+0: 50.0,
+1: 100.0,
+2: 75.0
+}
+maintain_values = {
+3: 25.0,
+4: 25.0,
+5: 100.0
+}
+aggression_values = {
+0: 0.0,
+1: -15.0,
+2: 15.0,
+3: -50.0,
+4: -75.0,
+5: 25.0
+}

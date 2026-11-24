@@ -1,0 +1,151 @@
+[gd_scene load_steps=22 format=3 uid="uid://ykw5amlhoi0f"]
+
+[ext_resource type="Script" uid="uid://o7qpdijmg4c7" path="res://scripts/minigames/candle/lighter.gd" id="1_yirwv"]
+[ext_resource type="AudioStream" uid="uid://ccqulkcff5hgh" path="res://assets/sounds/minigames/candle/lighter.wav" id="2_dnd1h"]
+[ext_resource type="Texture2D" uid="uid://cjuvwhbudtvs3" path="res://assets/sprites/minigames/Candle/lighter.png" id="3_dnd1h"]
+[ext_resource type="Texture2D" uid="uid://c8etmwdqpunp6" path="res://assets/sprites/minigames/Candle/fire.png" id="4_sv8o1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y5pjg"]
+radius = 4.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xps4h"]
+atlas = ExtResource("3_dnd1h")
+region = Rect2(0, 0, 49, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncepr"]
+atlas = ExtResource("3_dnd1h")
+region = Rect2(49, 0, 49, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k3e3"]
+atlas = ExtResource("3_dnd1h")
+region = Rect2(98, 0, 49, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm4fm"]
+atlas = ExtResource("3_dnd1h")
+region = Rect2(147, 0, 49, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itska"]
+atlas = ExtResource("3_dnd1h")
+region = Rect2(196, 0, 49, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncnp8"]
+atlas = ExtResource("3_dnd1h")
+region = Rect2(245, 0, 49, 71)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6b00v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xps4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncepr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k3e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm4fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itska")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncnp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xps4h")
+}],
+"loop": false,
+"name": &"light",
+"speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnd1h"]
+atlas = ExtResource("4_sv8o1")
+region = Rect2(34, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv8o1"]
+atlas = ExtResource("4_sv8o1")
+region = Rect2(51, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b00v"]
+atlas = ExtResource("4_sv8o1")
+region = Rect2(68, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddxkx"]
+atlas = ExtResource("4_sv8o1")
+region = Rect2(85, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tyqu"]
+atlas = ExtResource("4_sv8o1")
+region = Rect2(102, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikynn"]
+atlas = ExtResource("4_sv8o1")
+region = Rect2(119, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1jpc"]
+atlas = ExtResource("4_sv8o1")
+region = Rect2(0, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_402j0"]
+atlas = ExtResource("4_sv8o1")
+region = Rect2(17, 0, 17, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpe0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnd1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv8o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b00v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddxkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tyqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikynn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1jpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_402j0")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[node name="lighter" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_yirwv")
+
+[node name="LighterClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dnd1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, -15)
+shape = SubResource("CapsuleShape2D_y5pjg")
+
+[node name="Animated" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4, -8)
+sprite_frames = SubResource("SpriteFrames_6b00v")
+animation = &"light"
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-10, -15)
+scale = Vector2(0.602941, 0.602941)
+sprite_frames = SubResource("SpriteFrames_jpe0h")
+animation = &"fire"

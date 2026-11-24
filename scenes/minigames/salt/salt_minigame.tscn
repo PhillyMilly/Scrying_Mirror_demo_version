@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://be6ikb51fv6ol"]
+
+[ext_resource type="Script" uid="uid://ee2mb11li771" path="res://scripts/minigames/salt/salt_minigame.gd" id="1_j5bq3"]
+[ext_resource type="Texture2D" uid="uid://c1aok1iaq88nr" path="res://scenes/minigames/salt/salt_animation-sprite_sheet.png" id="2_en0xs"]
+[ext_resource type="AudioStream" uid="uid://bm6tn8k1gjduc" path="res://scenes/minigames/salt/salt.wav" id="2_fgbm8"]
+[ext_resource type="Texture2D" uid="uid://dldlt2dxdwwjv" path="res://assets/sprites/minigames/minigames_table_bg.png" id="2_h8lst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en0xs"]
+atlas = ExtResource("2_en0xs")
+region = Rect2(0, 0, 211, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgbm8"]
+atlas = ExtResource("2_en0xs")
+region = Rect2(211, 0, 211, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8lst"]
+atlas = ExtResource("2_en0xs")
+region = Rect2(422, 0, 211, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30cr3"]
+atlas = ExtResource("2_en0xs")
+region = Rect2(633, 0, 211, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4511"]
+atlas = ExtResource("2_en0xs")
+region = Rect2(844, 0, 211, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkuwr"]
+atlas = ExtResource("2_en0xs")
+region = Rect2(1055, 0, 211, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq8je"]
+atlas = ExtResource("2_en0xs")
+region = Rect2(1266, 0, 211, 227)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0t76"]
+atlas = ExtResource("2_en0xs")
+region = Rect2(1477, 0, 211, 227)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xu32m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en0xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgbm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8lst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30cr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4511")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkuwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq8je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0t76")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="salt_minigame" type="Node2D"]
+script = ExtResource("1_j5bq3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+texture = ExtResource("2_h8lst")
+
+[node name="Salt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fgbm8")
+volume_db = -15.373
+
+[node name="circle-indicator" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xu32m")
+autoplay = "default"
+frame_progress = 0.878462
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(538, -125)
+amount = 30
+lifetime = 0.45
+speed_scale = 3.67
+emission_shape = 3
+emission_rect_extents = Vector2(5, 5)
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+color = Color(0.819608, 0.74902, 0.690196, 1)
+
+[node name="CircleIndicatorTimer" type="Timer" parent="."]

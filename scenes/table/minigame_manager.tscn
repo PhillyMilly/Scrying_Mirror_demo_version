@@ -1,0 +1,74 @@
+[gd_scene load_steps=19 format=3 uid="uid://cpr5g3chi1mq3"]
+
+[ext_resource type="Script" uid="uid://xb3mr7noikkn" path="res://scripts/table/minigame_manager.gd" id="1_t5ei8"]
+[ext_resource type="Script" uid="uid://dlqnmkxrqurgn" path="res://scripts/minigames/minigame_entry.gd" id="2_lhstd"]
+[ext_resource type="PackedScene" uid="uid://cv3po504muor2" path="res://scenes/minigames/meditation/MeditationMinigame.tscn" id="3_bfbbx"]
+[ext_resource type="PackedScene" uid="uid://tbw7ghxnl0h4" path="res://scenes/minigames/candle/candle_minigame.tscn" id="4_i1ue4"]
+[ext_resource type="PackedScene" uid="uid://cpalhtfl70exo" path="res://scenes/minigames/glass/glas_minigame.tscn" id="5_0enco"]
+[ext_resource type="PackedScene" uid="uid://c2ojiabcl6cem" path="res://scenes/minigames/bowl/bowl_minigame.tscn" id="6_lp7xi"]
+[ext_resource type="PackedScene" uid="uid://ba8j1yvnqt38q" path="res://scenes/minigames/radio/radio_minigame.tscn" id="7_jhtrl"]
+[ext_resource type="PackedScene" uid="uid://be6ikb51fv6ol" path="res://scenes/minigames/salt/salt_minigame.tscn" id="8_nsl67"]
+[ext_resource type="PackedScene" uid="uid://1votcmm5530w" path="res://scenes/minigames/pendulum/pendulum_minigame.tscn" id="9_8rj0k"]
+[ext_resource type="PackedScene" uid="uid://b2pr02s6csv7v" path="res://scenes/minigames/ouija_board/ouija_board.tscn" id="10_4yvc1"]
+
+[sub_resource type="Resource" id="Resource_nqwrr"]
+script = ExtResource("2_lhstd")
+key = "meditation"
+scene = ExtResource("3_bfbbx")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_vkoix"]
+script = ExtResource("2_lhstd")
+key = "candlelight"
+scene = ExtResource("4_i1ue4")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_cm5o7"]
+script = ExtResource("2_lhstd")
+key = "glass"
+scene = ExtResource("5_0enco")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_oldaa"]
+script = ExtResource("2_lhstd")
+key = "bowl"
+scene = ExtResource("6_lp7xi")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_d3651"]
+script = ExtResource("2_lhstd")
+key = "radio"
+scene = ExtResource("7_jhtrl")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_3mjkh"]
+script = ExtResource("2_lhstd")
+key = "saltcircle"
+scene = ExtResource("8_nsl67")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_qye61"]
+script = ExtResource("2_lhstd")
+key = "pendulum"
+scene = ExtResource("9_8rj0k")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_ponk7"]
+script = ExtResource("2_lhstd")
+key = "ouija"
+scene = ExtResource("10_4yvc1")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[node name="MinigameManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t5ei8")
+minigame_entries = Array[ExtResource("2_lhstd")]([SubResource("Resource_nqwrr"), SubResource("Resource_vkoix"), SubResource("Resource_cm5o7"), SubResource("Resource_oldaa"), SubResource("Resource_d3651"), SubResource("Resource_3mjkh"), SubResource("Resource_qye61"), SubResource("Resource_ponk7")])
+
+[node name="MinigameViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = -160.0
+offset_top = -144.0
+offset_right = 160.0
+offset_bottom = 96.0
+stretch = true

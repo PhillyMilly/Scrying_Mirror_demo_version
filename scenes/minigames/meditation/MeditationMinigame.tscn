@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv3po504muor2"]
+
+[ext_resource type="Script" uid="uid://bd1drfxiel36k" path="res://scripts/minigames/meditation/meditation_minigame.gd" id="1_7idf4"]
+[ext_resource type="PackedScene" uid="uid://o7fx7df3h6lh" path="res://scenes/minigames/meditation/thought1.tscn" id="2_m8i5h"]
+
+[sub_resource type="Curve2D" id="Curve2D_swlqb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -512, -384, 0, 0, 0, 0, 512, -384, 0, 0, 0, 0, 512, 384, 0, 0, 0, 0, -512, 384, 0, 0, 0, 0, -512, -386)
+}
+point_count = 5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7idf4"]
+normal = Vector2(0, 1)
+distance = -144.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_swlqb"]
+distance = -144.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bnjl4"]
+normal = Vector2(1, 0)
+distance = -256.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d518q"]
+normal = Vector2(-1, 0)
+distance = -256.0
+
+[node name="MeditationMinigame" type="Node2D"]
+script = ExtResource("1_7idf4")
+Thought = ExtResource("2_m8i5h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-2.46763e-05, 0.374053)
+scale = Vector2(0.5, 0.374026)
+curve = SubResource("Curve2D_swlqb")
+
+[node name="SpawnLocation" type="PathFollow2D" parent="Path2D"]
+position = Vector2(512.092, -383.909)
+progress = 1024.16
+rotates = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="top" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_7idf4")
+
+[node name="bottom" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_swlqb")
+
+[node name="left" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_bnjl4")
+
+[node name="right" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_d518q")
+
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://du2460wl0lso1"]
+
+[ext_resource type="Script" uid="uid://tth7o3lhskk1" path="res://scripts/ui/slot.gd" id="1_sad2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ywj"]
+size = Vector2(19, 19)
+
+[node name="Slot" type="Area2D" unique_id=745803219]
+script = ExtResource("1_sad2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1040907637]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1701866749]
+shape = SubResource("RectangleShape2D_y7ywj")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

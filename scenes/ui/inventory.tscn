@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://44ecmpg3mmy4"]
+
+[ext_resource type="Texture2D" uid="uid://busho2id710am" path="res://assets/sprites/ui/bag.png" id="1_avmd0"]
+[ext_resource type="PackedScene" uid="uid://du2460wl0lso1" path="res://scenes/ui/slot.tscn" id="2_xeaml"]
+[ext_resource type="PackedScene" uid="uid://baf4uko5e4ghl" path="res://scenes/ui/item.tscn" id="3_xeaml"]
+[ext_resource type="Texture2D" uid="uid://bpkiw4eeisyml" path="res://assets/sprites/ui/orb.png" id="4_5yy05"]
+[ext_resource type="Texture2D" uid="uid://bfvllt15l3xhe" path="res://assets/sprites/ui/pendulum.png" id="5_ulvp7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yy05"]
+atlas = ExtResource("1_avmd0")
+region = Rect2(0, 0, 86, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36jtr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yy05")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smrfm"]
+size = Vector2(57, 114)
+
+[node name="Node2D" type="Node2D" unique_id=814613707]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=818558831]
+position = Vector2(-208, -8)
+sprite_frames = SubResource("SpriteFrames_36jtr")
+
+[node name="Inventory" type="Area2D" parent="AnimatedSprite2D" unique_id=1118315531]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Inventory" unique_id=762758592]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_smrfm")
+
+[node name="Slot" parent="AnimatedSprite2D" unique_id=745803219 instance=ExtResource("2_xeaml")]
+position = Vector2(-19, -59)
+metadata/_edit_lock_ = true
+
+[node name="Slot2" parent="AnimatedSprite2D" unique_id=1610898634 instance=ExtResource("2_xeaml")]
+position = Vector2(0, -59)
+metadata/_edit_lock_ = true
+
+[node name="Slot3" parent="AnimatedSprite2D" unique_id=1059095274 instance=ExtResource("2_xeaml")]
+position = Vector2(19, -59)
+metadata/_edit_lock_ = true
+
+[node name="Slot4" parent="AnimatedSprite2D" unique_id=1059553143 instance=ExtResource("2_xeaml")]
+position = Vector2(-19, -40)
+metadata/_edit_lock_ = true
+
+[node name="Slot5" parent="AnimatedSprite2D" unique_id=1115259855 instance=ExtResource("2_xeaml")]
+position = Vector2(0, -40)
+metadata/_edit_lock_ = true
+
+[node name="Slot6" parent="AnimatedSprite2D" unique_id=1812638497 instance=ExtResource("2_xeaml")]
+position = Vector2(-19, -21)
+metadata/_edit_lock_ = true
+
+[node name="Slot7" parent="AnimatedSprite2D" unique_id=2145244743 instance=ExtResource("2_xeaml")]
+position = Vector2(0, -21)
+metadata/_edit_lock_ = true
+
+[node name="Slot8" parent="AnimatedSprite2D" unique_id=1789597367 instance=ExtResource("2_xeaml")]
+position = Vector2(19, -40)
+metadata/_edit_lock_ = true
+
+[node name="Slot9" parent="AnimatedSprite2D" unique_id=258102425 instance=ExtResource("2_xeaml")]
+position = Vector2(19, -21)
+metadata/_edit_lock_ = true
+
+[node name="Slot10" parent="AnimatedSprite2D" unique_id=2142651374 instance=ExtResource("2_xeaml")]
+position = Vector2(-19, -2)
+metadata/_edit_lock_ = true
+
+[node name="Slot11" parent="AnimatedSprite2D" unique_id=986885606 instance=ExtResource("2_xeaml")]
+position = Vector2(0, -2)
+metadata/_edit_lock_ = true
+
+[node name="Slot12" parent="AnimatedSprite2D" unique_id=546644117 instance=ExtResource("2_xeaml")]
+position = Vector2(19, -2)
+metadata/_edit_lock_ = true
+
+[node name="Slot13" parent="AnimatedSprite2D" unique_id=731769702 instance=ExtResource("2_xeaml")]
+position = Vector2(-19, 17)
+metadata/_edit_lock_ = true
+
+[node name="Slot14" parent="AnimatedSprite2D" unique_id=1761276274 instance=ExtResource("2_xeaml")]
+position = Vector2(0, 17)
+metadata/_edit_lock_ = true
+
+[node name="Slot15" parent="AnimatedSprite2D" unique_id=1918943045 instance=ExtResource("2_xeaml")]
+position = Vector2(19, 17)
+metadata/_edit_lock_ = true
+
+[node name="Slot16" parent="AnimatedSprite2D" unique_id=1030157027 instance=ExtResource("2_xeaml")]
+position = Vector2(-19, 36)
+metadata/_edit_lock_ = true
+
+[node name="Slot17" parent="AnimatedSprite2D" unique_id=1338574947 instance=ExtResource("2_xeaml")]
+position = Vector2(0, 36)
+metadata/_edit_lock_ = true
+
+[node name="Slot18" parent="AnimatedSprite2D" unique_id=1633332742 instance=ExtResource("2_xeaml")]
+position = Vector2(19, 36)
+metadata/_edit_lock_ = true
+
+[node name="Orb" parent="." unique_id=198091738 instance=ExtResource("3_xeaml")]
+position = Vector2(-192, 60)
+texture = ExtResource("4_5yy05")
+
+[node name="Pendulum" parent="." unique_id=121305980 instance=ExtResource("3_xeaml")]
+position = Vector2(-223, 59)
+texture = ExtResource("5_ulvp7")
+
+[connection signal="area_entered" from="AnimatedSprite2D/Inventory" to="Orb" method="_on_inventory_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/Inventory" to="Pendulum" method="_on_inventory_area_entered"]
+[connection signal="area_exited" from="AnimatedSprite2D/Inventory" to="Orb" method="_on_inventory_area_exited"]
+[connection signal="area_exited" from="AnimatedSprite2D/Inventory" to="Pendulum" method="_on_inventory_area_exited"]

@@ -1,0 +1,771 @@
+[gd_scene load_steps=81 format=3 uid="uid://dp8t3lypsy2xk"]
+
+[ext_resource type="Texture2D" uid="uid://bugh1sw2ikfke" path="res://assets/trash/test/placeholder_table.png" id="1_02ppr"]
+[ext_resource type="Script" uid="uid://bglgrxg02yjr8" path="res://scripts/game_manager.gd" id="1_v2tov"]
+[ext_resource type="Script" uid="uid://blkyy5k7g7mim" path="res://scripts/table/job_manager.gd" id="2_0y6hh"]
+[ext_resource type="Resource" uid="uid://daw6uqqvcahrs" path="res://resources/ShyGhostData.tres" id="3_8xt64"]
+[ext_resource type="PackedScene" uid="uid://cpr5g3chi1mq3" path="res://scenes/table/minigame_manager.tscn" id="3_qxbf1"]
+[ext_resource type="Script" uid="uid://dadmj4u4upb4h" path="res://scripts/table/tool_ui.gd" id="3_wpgb8"]
+[ext_resource type="Resource" uid="uid://b4dqaaakxl7fh" path="res://resources/NormalGhostData.tres" id="4_nfafe"]
+[ext_resource type="PackedScene" uid="uid://bw7qc2farg8tx" path="res://scenes/ghost_bar_system/GhostBarManager.tscn" id="4_wpgb8"]
+[ext_resource type="Resource" uid="uid://b354latyvq7xr" path="res://resources/AggressiveGhostData.tres" id="5_6tgsi"]
+[ext_resource type="Texture2D" uid="uid://cimhl1qqsn401" path="res://assets/sprites/scrying_mirror-Sheet.png" id="5_7ytei"]
+[ext_resource type="Texture2D" uid="uid://exsjabs8xit0" path="res://assets/sprites/clouds2.png" id="6_2m3td"]
+[ext_resource type="Texture2D" uid="uid://1dgchhf5s2nw" path="res://assets/sprites/window_bg.png" id="6_kask2"]
+[ext_resource type="Texture2D" uid="uid://cykt8s7rxbp0l" path="res://assets/sprites/clouds1.png" id="6_xvw5b"]
+[ext_resource type="Script" uid="uid://dlqnmkxrqurgn" path="res://scripts/minigames/minigame_entry.gd" id="7_3mjkh"]
+[ext_resource type="Texture2D" uid="uid://cg1m6qqvvfx3e" path="res://assets/sprites/curtain-SpriteSheet.png" id="7_s5l2n"]
+[ext_resource type="PackedScene" uid="uid://cv3po504muor2" path="res://scenes/minigames/meditation/MeditationMinigame.tscn" id="8_qye61"]
+[ext_resource type="Texture2D" uid="uid://dekk0qpd03b1s" path="res://assets/sprites/table.png" id="8_ub0u6"]
+[ext_resource type="Texture2D" uid="uid://1bcxlrweafd3" path="res://assets/sprites/Alma-sprite_sheet.png" id="9_i4r1g"]
+[ext_resource type="Script" uid="uid://burx376f68dix" path="res://scripts/table/ghost_bar_ui.gd" id="9_nfafe"]
+[ext_resource type="PackedScene" uid="uid://tbw7ghxnl0h4" path="res://scenes/minigames/candle/candle_minigame.tscn" id="9_ponk7"]
+[ext_resource type="PackedScene" uid="uid://uvaohjp1y351" path="res://scenes/dialog/dialog_area.tscn" id="10_6tgsi"]
+[ext_resource type="PackedScene" uid="uid://cpalhtfl70exo" path="res://scenes/minigames/glass/glas_minigame.tscn" id="10_nqwrr"]
+[ext_resource type="PackedScene" uid="uid://c2ojiabcl6cem" path="res://scenes/minigames/bowl/bowl_minigame.tscn" id="11_fckiu"]
+[ext_resource type="PackedScene" uid="uid://ba8j1yvnqt38q" path="res://scenes/minigames/radio/radio_minigame.tscn" id="12_tymu5"]
+[ext_resource type="PackedScene" uid="uid://be6ikb51fv6ol" path="res://scenes/minigames/salt/salt_minigame.tscn" id="13_v2tov"]
+[ext_resource type="PackedScene" uid="uid://1votcmm5530w" path="res://scenes/minigames/pendulum/pendulum_minigame.tscn" id="14_7ytei"]
+[ext_resource type="PackedScene" uid="uid://b2pr02s6csv7v" path="res://scenes/minigames/ouija_board/ouija_board.tscn" id="15_kask2"]
+[ext_resource type="PackedScene" uid="uid://dljkj0ttjw6f6" path="res://scenes/minigames/crystal_orb/crystal_orb.tscn" id="16_s5l2n"]
+[ext_resource type="PackedScene" uid="uid://btlwawwe6pjef" path="res://scenes/minigames/spiritbox/spiritbox.tscn" id="17_ponk7"]
+[ext_resource type="Script" uid="uid://cbrv7eem2g412" path="res://scripts/table/information_manager.gd" id="18_qye61"]
+[ext_resource type="Theme" uid="uid://dvhf6148iy666" path="res://resources/base_theme.tres" id="20_tymu5"]
+[ext_resource type="Texture2D" uid="uid://q42hi228k15h" path="res://assets/sprites/panel.png" id="22_fckiu"]
+[ext_resource type="FontFile" uid="uid://bo3v2tvdprj2n" path="res://assets/fonts/Kenney Mini.ttf" id="23_nqwrr"]
+[ext_resource type="AudioStream" uid="uid://woiqt7o44icc" path="res://assets/sounds/text/text_noise.wav" id="28_kask2"]
+[ext_resource type="AudioStream" uid="uid://dul7h21x22r14" path="res://assets/music/chill_bill_no_contact05.wav" id="33_2m3td"]
+[ext_resource type="Script" uid="uid://cqudv0sr8sgws" path="res://scenes/table/music.gd" id="33_i0xh3"]
+[ext_resource type="Script" uid="uid://dpulm7tolckay" path="res://scenes/table/audio_stream_player.gd" id="35_2aar6"]
+[ext_resource type="AudioStream" uid="uid://di7dmims7p5ho" path="res://assets/music/chill_bill_contact07.wav" id="35_kt524"]
+[ext_resource type="Script" uid="uid://c0bw7hp3v64u" path="res://scenes/table/contact.gd" id="36_2aar6"]
+[ext_resource type="AudioStream" uid="uid://biq0rw1cn1ajn" path="res://assets/sounds/click_item2.wav" id="37_i0xh3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ytei"]
+atlas = ExtResource("5_7ytei")
+region = Rect2(0, 0, 78, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kask2"]
+atlas = ExtResource("5_7ytei")
+region = Rect2(78, 0, 78, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5l2n"]
+atlas = ExtResource("5_7ytei")
+region = Rect2(156, 0, 78, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qseyv"]
+atlas = ExtResource("5_7ytei")
+region = Rect2(234, 0, 78, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub0u6"]
+atlas = ExtResource("5_7ytei")
+region = Rect2(312, 0, 78, 78)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4r1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ytei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kask2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5l2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qseyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub0u6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_kt524"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-88, -95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Clouds2Buffer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-235, -95)]
+}
+
+[sub_resource type="Animation" id="Animation_a1xcr"]
+resource_name = "cloud_scrolling2"
+length = 441.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 441),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-88, -95), Vector2(59, -95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Clouds2Buffer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 441),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-235, -95), Vector2(-88, -95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2aar6"]
+_data = {
+&"RESET": SubResource("Animation_kt524"),
+&"cloud_scrolling2": SubResource("Animation_a1xcr")
+}
+
+[sub_resource type="Animation" id="Animation_xvw5b"]
+length = 147.0
+step = 1.0
+
+[sub_resource type="Animation" id="Animation_2m3td"]
+resource_name = "cloud scrolling"
+length = 294.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 294),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-63, -95), Vector2(84, -95)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Clouds1Buffer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 294),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-210, -95), Vector2(-63, -95)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a1xcr"]
+_data = {
+&"RESET": SubResource("Animation_xvw5b"),
+&"cloud scrolling": SubResource("Animation_2m3td")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4r1g"]
+atlas = ExtResource("7_s5l2n")
+region = Rect2(0, 0, 115, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvw5b"]
+atlas = ExtResource("7_s5l2n")
+region = Rect2(115, 0, 115, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m3td"]
+atlas = ExtResource("7_s5l2n")
+region = Rect2(230, 0, 115, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1xcr"]
+atlas = ExtResource("7_s5l2n")
+region = Rect2(345, 0, 115, 85)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kt524"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4r1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvw5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m3td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1xcr")
+}],
+"loop": true,
+"name": &"curtains",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt524"]
+atlas = ExtResource("9_i4r1g")
+region = Rect2(0, 0, 108, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aar6"]
+atlas = ExtResource("9_i4r1g")
+region = Rect2(108, 0, 108, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0xh3"]
+atlas = ExtResource("9_i4r1g")
+region = Rect2(216, 0, 108, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r1pc"]
+atlas = ExtResource("9_i4r1g")
+region = Rect2(324, 0, 108, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21mik"]
+atlas = ExtResource("9_i4r1g")
+region = Rect2(432, 0, 108, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yrq0"]
+atlas = ExtResource("9_i4r1g")
+region = Rect2(540, 0, 108, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dm80"]
+atlas = ExtResource("9_i4r1g")
+region = Rect2(648, 0, 108, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpg2l"]
+atlas = ExtResource("9_i4r1g")
+region = Rect2(756, 0, 108, 136)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ddn4c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt524")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aar6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0xh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r1pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21mik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yrq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dm80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpg2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Resource" id="Resource_nqwrr"]
+script = ExtResource("7_3mjkh")
+key = "meditation"
+scene = ExtResource("8_qye61")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_vkoix"]
+script = ExtResource("7_3mjkh")
+key = "candlelight"
+scene = ExtResource("9_ponk7")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_cm5o7"]
+script = ExtResource("7_3mjkh")
+key = "glass"
+scene = ExtResource("10_nqwrr")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_oldaa"]
+script = ExtResource("7_3mjkh")
+key = "bowl"
+scene = ExtResource("11_fckiu")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_d3651"]
+script = ExtResource("7_3mjkh")
+key = "radio"
+scene = ExtResource("12_tymu5")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_3mjkh"]
+script = ExtResource("7_3mjkh")
+key = "saltcircle"
+scene = ExtResource("13_v2tov")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_qye61"]
+script = ExtResource("7_3mjkh")
+key = "pendulum"
+scene = ExtResource("14_7ytei")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_ponk7"]
+script = ExtResource("7_3mjkh")
+key = "ouija"
+scene = ExtResource("15_kask2")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_qseyv"]
+script = ExtResource("7_3mjkh")
+key = "crystalorb"
+scene = ExtResource("16_s5l2n")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_fckiu"]
+script = ExtResource("7_3mjkh")
+key = "spiritbox"
+scene = ExtResource("17_ponk7")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tgsi"]
+bg_color = Color(0.282353, 0.419608, 0.498039, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tymu5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctt8d"]
+bg_color = Color(0.478431, 0.611765, 0.588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2tov"]
+bg_color = Color(0.733333, 0.278431, 0.309804, 1)
+
+[node name="Table" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_v2tov")
+shy_ghost_data = ExtResource("3_8xt64")
+normal_ghost_data = ExtResource("4_nfafe")
+aggressive_ghost_data = ExtResource("5_6tgsi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ScryingMirror" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(208, -68)
+sprite_frames = SubResource("SpriteFrames_i4r1g")
+
+[node name="BG_" type="Node2D" parent="."]
+
+[node name="Clouds2Buffer" type="Sprite2D" parent="BG_"]
+position = Vector2(-235, -95)
+texture = ExtResource("6_2m3td")
+
+[node name="Clouds2" type="Sprite2D" parent="BG_"]
+position = Vector2(-88, -95)
+texture = ExtResource("6_2m3td")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BG_/Clouds2"]
+libraries = {
+&"": SubResource("AnimationLibrary_2aar6")
+}
+autoplay = "cloud_scrolling2"
+
+[node name="Clouds1Buffer" type="Sprite2D" parent="BG_"]
+position = Vector2(-210, -95)
+texture = ExtResource("6_xvw5b")
+
+[node name="Clouds1" type="Sprite2D" parent="BG_"]
+position = Vector2(-63, -95)
+texture = ExtResource("6_xvw5b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BG_/Clouds1"]
+libraries = {
+&"": SubResource("AnimationLibrary_a1xcr")
+}
+autoplay = "cloud scrolling"
+
+[node name="BG" type="Sprite2D" parent="BG_"]
+z_index = -1
+texture = ExtResource("1_02ppr")
+metadata/_edit_lock_ = true
+
+[node name="WindowBG" type="Sprite2D" parent="BG_"]
+position = Vector2(0, -24)
+texture = ExtResource("6_kask2")
+
+[node name="Curtains" type="AnimatedSprite2D" parent="BG_"]
+position = Vector2(-38, -85)
+sprite_frames = SubResource("SpriteFrames_kt524")
+animation = &"curtains"
+autoplay = "curtains"
+frame_progress = 0.865722
+
+[node name="Table" type="Sprite2D" parent="BG_"]
+position = Vector2(0, -24)
+texture = ExtResource("8_ub0u6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG_"]
+position = Vector2(52, -40)
+sprite_frames = SubResource("SpriteFrames_ddn4c")
+autoplay = "default"
+frame_progress = 0.298129
+
+[node name="JobManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_0y6hh")
+shy_ghost_data = ExtResource("3_8xt64")
+normal_ghost_data = ExtResource("4_nfafe")
+aggressive_ghost_data = ExtResource("5_6tgsi")
+
+[node name="MinigameManager" parent="JobManager" instance=ExtResource("3_qxbf1")]
+unique_name_in_owner = true
+minigame_entries = Array[ExtResource("7_3mjkh")]([SubResource("Resource_nqwrr"), SubResource("Resource_vkoix"), SubResource("Resource_cm5o7"), SubResource("Resource_oldaa"), SubResource("Resource_d3651"), SubResource("Resource_3mjkh"), SubResource("Resource_qye61"), SubResource("Resource_ponk7"), SubResource("Resource_qseyv"), SubResource("Resource_fckiu")])
+metadata/_edit_lock_ = true
+
+[node name="GhostBarManager" parent="JobManager" instance=ExtResource("4_wpgb8")]
+unique_name_in_owner = true
+offset_left = 18.0
+offset_top = 8.0
+offset_right = 18.0
+offset_bottom = 8.0
+metadata/_edit_lock_ = true
+
+[node name="InformationManager" type="Node" parent="JobManager"]
+unique_name_in_owner = true
+script = ExtResource("18_qye61")
+
+[node name="JobTimer" type="Timer" parent="JobManager"]
+
+[node name="UI" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("20_tymu5")
+script = ExtResource("3_wpgb8")
+
+[node name="GhostBarPanel" type="NinePatchRect" parent="UI"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -144.0
+offset_right = 256.0
+offset_bottom = 144.0
+texture = ExtResource("22_fckiu")
+region_rect = Rect2(4, 4, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="DialoguePanel" type="NinePatchRect" parent="UI"]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 96.0
+offset_right = 160.0
+offset_bottom = 144.0
+texture = ExtResource("22_fckiu")
+region_rect = Rect2(4, 4, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="ToolBoxPanel" type="NinePatchRect" parent="UI"]
+layout_mode = 0
+offset_left = -256.0
+offset_top = -144.0
+offset_right = -160.0
+offset_bottom = 144.0
+texture = ExtResource("22_fckiu")
+region_rect = Rect2(4, 4, 32, 32)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="ButtonContainer" type="Control" parent="UI"]
+z_index = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ContactLabel" type="Label" parent="UI/ButtonContainer"]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -136.0
+offset_right = -215.0
+offset_bottom = -126.0
+text = "Contact"
+horizontal_alignment = 1
+
+[node name="MaintainLabel" type="Label" parent="UI/ButtonContainer"]
+layout_mode = 0
+offset_left = -246.0
+offset_top = -62.0
+offset_right = -212.0
+offset_bottom = -52.0
+text = "Maintain"
+horizontal_alignment = 1
+
+[node name="CommunicateLabel" type="Label" parent="UI/ButtonContainer"]
+layout_mode = 0
+offset_left = -245.0
+offset_top = 5.0
+offset_right = -192.0
+offset_bottom = 15.0
+text = "Communicate"
+horizontal_alignment = 1
+
+[node name="Contact" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Candlelight" type="Button" parent="UI/ButtonContainer/Contact"]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -120.0
+offset_right = -212.0
+offset_bottom = -102.0
+text = "Candle
+"
+
+[node name="Glass" type="Button" parent="UI/ButtonContainer/Contact"]
+layout_mode = 0
+offset_left = -205.0
+offset_top = -120.0
+offset_right = -174.0
+offset_bottom = -102.0
+text = "Glass
+"
+
+[node name="Meditation" type="Button" parent="UI/ButtonContainer/Contact"]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -99.0
+offset_right = -197.0
+offset_bottom = -81.0
+text = "Meditation"
+
+[node name="Maintain" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bowl" type="Button" parent="UI/ButtonContainer/Maintain"]
+layout_mode = 0
+offset_left = -216.0
+offset_top = -49.0
+offset_right = -189.0
+offset_bottom = -31.0
+text = "Bowl
+"
+
+[node name="Radio" type="Button" parent="UI/ButtonContainer/Maintain"]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -49.0
+offset_right = -218.0
+offset_bottom = -31.0
+text = "Radio
+"
+
+[node name="Saltcircle" type="Button" parent="UI/ButtonContainer/Maintain"]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -29.0
+offset_right = -198.0
+offset_bottom = -11.0
+text = "Saltcircle
+"
+
+[node name="Communicate" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pendulum" type="Button" parent="UI/ButtonContainer/Communicate"]
+layout_mode = 0
+offset_left = -245.0
+offset_top = 78.0
+offset_right = -193.0
+offset_bottom = 96.0
+text = "Pendulumn"
+
+[node name="Ouija" type="Button" parent="UI/ButtonContainer/Communicate"]
+layout_mode = 0
+offset_left = -246.0
+offset_top = 58.0
+offset_right = -190.0
+offset_bottom = 76.0
+text = "Ouija Board"
+
+[node name="CrystalOrb" type="Button" parent="UI/ButtonContainer/Communicate"]
+layout_mode = 0
+offset_left = -246.0
+offset_top = 38.0
+offset_right = -191.0
+offset_bottom = 56.0
+text = "CrystalOrb
+"
+
+[node name="Spiritbox" type="Button" parent="UI/ButtonContainer/Communicate"]
+layout_mode = 0
+offset_left = -246.0
+offset_top = 18.0
+offset_right = -200.0
+offset_bottom = 36.0
+text = "Spiritbox
+"
+
+[node name="GhostBarContainer" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_nfafe")
+ACTIVE_AGGRESSION_BAR_COLOR = Color(0.733333, 0.278431, 0.309804, 1)
+INACTIVE_AGGRESSION_BAR_COLOR = Color(0.443137, 0.247059, 0.321569, 1)
+
+[node name="ContactBar" type="ProgressBar" parent="UI/GhostBarContainer"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = -19.0
+offset_right = 240.0
+offset_bottom = -13.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_6tgsi")
+value = 60.0
+show_percentage = false
+
+[node name="MaintainBar" type="ProgressBar" parent="UI/GhostBarContainer"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = -19.0
+offset_right = 240.0
+offset_bottom = -13.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_tymu5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ctt8d")
+value = 25.0
+show_percentage = false
+
+[node name="AggressionBar" type="ProgressBar" parent="UI/GhostBarContainer"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = -4.0
+offset_right = 240.0
+offset_bottom = 2.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_v2tov")
+value = 70.0
+show_percentage = false
+
+[node name="TimeLeftLabel" type="Label" parent="UI/GhostBarContainer"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 111.0
+offset_right = 232.0
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(0.478431, 0.611765, 0.588235, 1)
+theme_override_font_sizes/font_size = 16
+text = "XX:XX"
+horizontal_alignment = 1
+
+[node name="DebugButtons" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = -249.0
+offset_top = 114.0
+offset_right = -167.0
+offset_bottom = 132.0
+
+[node name="PauseBars" type="Button" parent="UI/DebugButtons"]
+layout_mode = 2
+text = "||"
+
+[node name="ResumeBars" type="Button" parent="UI/DebugButtons"]
+layout_mode = 2
+text = ">"
+
+[node name="CloseMinigame" type="Button" parent="UI/DebugButtons"]
+layout_mode = 2
+text = "X"
+
+[node name="FinishMinigame" type="Button" parent="UI/DebugButtons"]
+layout_mode = 2
+text = ">>"
+
+[node name="Fail" type="Button" parent="UI/DebugButtons"]
+layout_mode = 2
+text = "F"
+
+[node name="DialogArea" parent="." instance=ExtResource("10_6tgsi")]
+process_mode = 3
+offset_left = -152.0
+offset_top = 102.0
+offset_right = 152.0
+offset_bottom = 139.0
+theme_override_colors/default_color = Color(0.819608, 0.74902, 0.690196, 1)
+theme_override_colors/font_selected_color = Color(0.478431, 0.611765, 0.588235, 1)
+theme_override_fonts/normal_font = ExtResource("23_nqwrr")
+theme_override_fonts/bold_font = ExtResource("23_nqwrr")
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+scroll_active = false
+
+[node name="TextNoise" type="AudioStreamPlayer" parent="DialogArea"]
+stream = ExtResource("28_kask2")
+volume_db = -15.0
+
+[node name="music" type="Node2D" parent="."]
+script = ExtResource("33_i0xh3")
+
+[node name="no_contact" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("33_2m3td")
+volume_db = -7.0
+script = ExtResource("35_2aar6")
+
+[node name="contact" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("35_kt524")
+volume_db = -80.0
+script = ExtResource("36_2aar6")
+
+[node name="ClickItem2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_i0xh3")
+volume_db = 10.0
+
+[connection signal="sig_cause_of_death" from="GameManager" to="DialogArea" method="_on_game_manager_sig_cause_of_death"]
+[connection signal="sig_gained_contact" from="JobManager" to="UI/GhostBarContainer" method="_on_job_manager_sig_gained_contact"]
+[connection signal="sig_gained_contact" from="JobManager" to="music" method="_on_job_manager_sig_gained_contact"]
+[connection signal="sig_gained_contact" from="JobManager" to="music/contact" method="_on_job_manager_sig_gained_contact"]
+[connection signal="sig_lost_contact" from="JobManager" to="UI/GhostBarContainer" method="_on_job_manager_sig_lost_contact"]
+[connection signal="sig_lost_contact" from="JobManager" to="DialogArea" method="_on_job_manager_sig_lost_contact"]
+[connection signal="sig_lost_contact" from="JobManager" to="music" method="_on_job_manager_sig_lost_contact"]
+[connection signal="sig_lost_contact" from="JobManager" to="music/no_contact" method="_on_job_manager_sig_lost_contact"]
+[connection signal="start_minigame" from="JobManager" to="DialogArea" method="_on_job_manager_start_minigame"]
+[connection signal="minigame_result" from="JobManager/MinigameManager" to="DialogArea" method="_on_minigame_manager_minigame_result"]
+[connection signal="finish_job" from="JobManager/InformationManager" to="DialogArea" method="_on_information_manager_finish_job"]
+[connection signal="pressed" from="UI/DebugButtons/PauseBars" to="GameManager" method="_on_pause_bars_pressed"]
+[connection signal="pressed" from="UI/DebugButtons/ResumeBars" to="GameManager" method="_on_resume_bars_pressed"]
+[connection signal="pressed" from="UI/DebugButtons/CloseMinigame" to="GameManager" method="_on_close_minigame_pressed"]
+[connection signal="pressed" from="UI/DebugButtons/FinishMinigame" to="GameManager" method="_on_finish_minigame_pressed"]
+[connection signal="pressed" from="UI/DebugButtons/Fail" to="GameManager" method="_on_fail_pressed"]

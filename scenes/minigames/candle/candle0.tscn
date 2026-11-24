@@ -1,0 +1,157 @@
+[gd_scene load_steps=23 format=3 uid="uid://dsec1issmdlt2"]
+
+[ext_resource type="Script" uid="uid://p6ndjlwurv2a" path="res://scripts/minigames/candle/candle.gd" id="1_2cmy5"]
+[ext_resource type="Texture2D" uid="uid://c8etmwdqpunp6" path="res://assets/sprites/minigames/Candle/fire.png" id="2_l4key"]
+[ext_resource type="Texture2D" uid="uid://6ks7o5xnibn2" path="res://assets/sprites/minigames/Candle/candle_left.png" id="3_51ctd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4key"]
+atlas = ExtResource("2_l4key")
+region = Rect2(0, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51ctd"]
+atlas = ExtResource("2_l4key")
+region = Rect2(17, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr5gj"]
+atlas = ExtResource("2_l4key")
+region = Rect2(34, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2q3t"]
+atlas = ExtResource("2_l4key")
+region = Rect2(51, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caset"]
+atlas = ExtResource("2_l4key")
+region = Rect2(68, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1t1g"]
+atlas = ExtResource("2_l4key")
+region = Rect2(85, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nirbl"]
+atlas = ExtResource("2_l4key")
+region = Rect2(102, 0, 17, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob50b"]
+atlas = ExtResource("2_l4key")
+region = Rect2(119, 0, 17, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux4ec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4key")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51ctd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr5gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2q3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caset")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1t1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nirbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob50b")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acs7i"]
+atlas = ExtResource("3_51ctd")
+region = Rect2(0, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dppvb"]
+atlas = ExtResource("3_51ctd")
+region = Rect2(48, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tbmm"]
+atlas = ExtResource("3_51ctd")
+region = Rect2(96, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq3p8"]
+atlas = ExtResource("3_51ctd")
+region = Rect2(144, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elj8c"]
+atlas = ExtResource("3_51ctd")
+region = Rect2(192, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jgd5"]
+atlas = ExtResource("3_51ctd")
+region = Rect2(240, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocyrf"]
+atlas = ExtResource("3_51ctd")
+region = Rect2(288, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wai78"]
+atlas = ExtResource("3_51ctd")
+region = Rect2(336, 0, 48, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2bup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acs7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dppvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tbmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq3p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elj8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jgd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocyrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wai78")
+}],
+"loop": true,
+"name": &"glow",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ybelu"]
+radius = 3.0
+
+[node name="candle0" type="Area2D"]
+collision_layer = 2
+monitorable = false
+script = ExtResource("1_2cmy5")
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -25)
+sprite_frames = SubResource("SpriteFrames_ux4ec")
+animation = &"fire"
+
+[node name="Candle" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 16)
+sprite_frames = SubResource("SpriteFrames_j2bup")
+animation = &"glow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_ybelu")

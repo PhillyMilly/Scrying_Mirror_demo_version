@@ -1,0 +1,211 @@
+[gd_scene load_steps=31 format=3 uid="uid://dljkj0ttjw6f6"]
+
+[ext_resource type="Script" uid="uid://pgh40m2ap7fu" path="res://scripts/minigames/crystal_orb/crystal_orb.gd" id="1_y4ro4"]
+[ext_resource type="Texture2D" uid="uid://eck6uoidxosp" path="res://assets/trash/crystalorb/mask.png" id="2_3glp0"]
+[ext_resource type="Texture2D" uid="uid://c3oirphmlbx5d" path="res://assets/sprites/minigames/crystal/background.png" id="2_17f0h"]
+[ext_resource type="Texture2D" uid="uid://dw7sv54i1b50n" path="res://assets/sprites/minigames/crystal/Nelson.png" id="4_17f0h"]
+[ext_resource type="PackedScene" uid="uid://dvcxhvlvvb8yv" path="res://scenes/minigames/crystal_orb/clue.tscn" id="4_s0lt4"]
+[ext_resource type="Script" uid="uid://dd5gy5cksi26x" path="res://scripts/minigames/crystal_orb/orb.gd" id="4_t4n3y"]
+[ext_resource type="Script" uid="uid://c0cyaui6chcj0" path="res://scripts/minigames/crystal_orb/clues.gd" id="4_y4ro4"]
+[ext_resource type="Texture2D" uid="uid://bfbs1l758nkwp" path="res://assets/trash/crystalorb/hazy_mask.png" id="7_17f0h"]
+[ext_resource type="Texture2D" uid="uid://c6eeq6b4qmiqa" path="res://assets/sprites/minigames/crystal/crystal_orb.png" id="7_s0lt4"]
+[ext_resource type="PackedScene" uid="uid://b6mmg6p84dhyd" path="res://scenes/mouse.tscn" id="7_wn038"]
+[ext_resource type="Texture2D" uid="uid://cssyuu3swfgj" path="res://assets/trash/crystalorb/hazy_1.png" id="8_s0lt4"]
+[ext_resource type="Texture2D" uid="uid://pyxekpu7dpxp" path="res://assets/trash/crystalorb/hazy_2.png" id="9_y4ro4"]
+[ext_resource type="Texture2D" uid="uid://d3j6og0m01qum" path="res://assets/trash/crystalorb/hazy_3.png" id="10_45xi2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0lt4"]
+atlas = ExtResource("4_17f0h")
+region = Rect2(0, 0, 1200, 900)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4ro4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0lt4")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3glp0"]
+distance = -141.607
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4ou87"]
+distance = -751.607
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wn038"]
+distance = -1002.14
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_umgeb"]
+distance = -190.625
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17f0h"]
+radius = 10.8928
+height = 137.976
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4ro4"]
+atlas = ExtResource("7_s0lt4")
+region = Rect2(0, 0, 400, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45xi2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4ro4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x8sr7"]
+radius = 66.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iemh0"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ym6k"]
+atlas = ExtResource("8_s0lt4")
+region = Rect2(0, 0, 800, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15lgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ym6k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfy5a"]
+atlas = ExtResource("9_y4ro4")
+region = Rect2(0, 0, 800, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u63l1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfy5a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsj2s"]
+atlas = ExtResource("10_45xi2")
+region = Rect2(0, 0, 800, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggngo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsj2s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CrystalOrb" type="Node2D"]
+script = ExtResource("1_y4ro4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_17f0h")
+
+[node name="VisionMask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(0, -16)
+scale = Vector2(0.327273, 0.327273)
+texture = ExtResource("2_3glp0")
+
+[node name="Vision" type="CharacterBody2D" parent="VisionMask"]
+position = Vector2(-131.389, 128.333)
+scale = Vector2(1.68306, 1.68306)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="VisionMask/Vision"]
+position = Vector2(-404.851, -305)
+sprite_frames = SubResource("SpriteFrames_y4ro4")
+animation = &"new_animation"
+
+[node name="Bottom" type="CollisionShape2D" parent="VisionMask/Vision"]
+position = Vector2(0, -1.81547)
+shape = SubResource("WorldBoundaryShape2D_3glp0")
+
+[node name="Up" type="CollisionShape2D" parent="VisionMask/Vision"]
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_4ou87")
+
+[node name="Left" type="CollisionShape2D" parent="VisionMask/Vision"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_wn038")
+
+[node name="Right" type="CollisionShape2D" parent="VisionMask/Vision"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_umgeb")
+
+[node name="Clues" type="Node2D" parent="VisionMask/Vision"]
+position = Vector2(-1, 8.00001)
+scale = Vector2(0.594156, 0.594156)
+script = ExtResource("4_y4ro4")
+
+[node name="License" parent="VisionMask/Vision/Clues" instance=ExtResource("4_s0lt4")]
+position = Vector2(1.68306, -13.4645)
+scale = Vector2(1.68306, 1.68306)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionMask/Vision/Clues/License"]
+position = Vector2(-613.63, -157.946)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_17f0h")
+
+[node name="Orb" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_45xi2")
+script = ExtResource("4_t4n3y")
+
+[node name="GrabArea" type="CharacterBody2D" parent="Orb"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orb/GrabArea"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_x8sr7")
+
+[node name="DetectionArea" type="Area2D" parent="Orb"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orb/DetectionArea"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_iemh0")
+
+[node name="HazyMask" type="Sprite2D" parent="."]
+visible = false
+clip_children = 1
+position = Vector2(0, 9)
+scale = Vector2(0.607792, 0.607792)
+texture = ExtResource("7_17f0h")
+
+[node name="Haze1" type="AnimatedSprite2D" parent="HazyMask"]
+position = Vector2(4.9359, 60.8761)
+scale = Vector2(1.6453, 1.6453)
+sprite_frames = SubResource("SpriteFrames_15lgo")
+
+[node name="Haze2" type="AnimatedSprite2D" parent="HazyMask"]
+position = Vector2(-1.6453, 69.1026)
+scale = Vector2(1.6453, 1.6453)
+sprite_frames = SubResource("SpriteFrames_u63l1")
+
+[node name="Haze3" type="AnimatedSprite2D" parent="HazyMask"]
+position = Vector2(3.2906, 67.4573)
+scale = Vector2(1.6453, 1.6453)
+sprite_frames = SubResource("SpriteFrames_ggngo")
+
+[node name="Mouse" parent="." instance=ExtResource("7_wn038")]
+
+[connection signal="area_entered" from="Orb/DetectionArea" to="Orb/DetectionArea" method="_on_area_entered"]
+[connection signal="body_entered" from="Mouse" to="Orb" method="_on_mouse_body_entered"]
+[connection signal="body_exited" from="Mouse" to="Orb" method="_on_mouse_body_exited"]

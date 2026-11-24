@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://be6ikb51fv6ol"]
+
+[ext_resource type="Script" uid="uid://ee2mb11li771" path="res://salt_minigame.gd" id="1_j5bq3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5bq3"]
+radius = 233.482
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grcs0"]
+radius = 196.041
+
+[node name="salt_minigame" type="Node2D"]
+script = ExtResource("1_j5bq3")
+
+[node name="AreaInner" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInner"]
+shape = SubResource("CircleShape2D_j5bq3")
+
+[node name="AreaOuter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOuter"]
+shape = SubResource("CircleShape2D_grcs0")
+
+[node name="Camera2D" type="Camera2D" parent="."]

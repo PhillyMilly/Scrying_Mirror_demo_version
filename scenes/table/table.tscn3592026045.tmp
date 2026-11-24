@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp8t3lypsy2xk"]
+
+[ext_resource type="Texture2D" uid="uid://bugh1sw2ikfke" path="res://assets/sprites/placeholder_table.png" id="1_02ppr"]
+[ext_resource type="PackedScene" uid="uid://cldp6re4xixo1" path="res://scenes/table/2d_ minigame_viewport.tscn" id="2_ov72x"]
+
+[node name="Table" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_02ppr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Minigame Window" parent="." instance=ExtResource("2_ov72x")]
+offset_left = -512.0
+offset_top = -508.0
+offset_right = -512.0
+offset_bottom = -508.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = -905.0
+offset_top = -425.0
+offset_right = -798.0
+offset_bottom = -318.0
+text = "TOOL 1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -708.0
+offset_top = -422.0
+offset_right = -601.0
+offset_bottom = -315.0
+text = "TOOL 2"

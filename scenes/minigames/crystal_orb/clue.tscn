@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvcxhvlvvb8yv"]
+
+[ext_resource type="Script" uid="uid://d4crpvxsw2rvt" path="res://scripts/minigames/crystal_orb/detection_area.gd" id="1_c33sp"]
+
+[node name="Clue" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_c33sp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

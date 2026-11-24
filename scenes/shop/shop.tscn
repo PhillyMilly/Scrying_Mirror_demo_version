@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://dudyewo24fbfi"]
+
+[ext_resource type="Script" uid="uid://w7vlr3ubcx0o" path="res://shop.gd" id="1_100s2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qaxay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lxhl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp048"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctpgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptf86"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge4d2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_100s2"]
+
+[node name="shop" type="Node2D"]
+script = ExtResource("1_100s2")
+
+[node name="Character2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character2D"]
+shape = SubResource("CircleShape2D_qaxay")
+
+[node name="salt" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salt"]
+position = Vector2(-144, -88)
+shape = SubResource("RectangleShape2D_7lxhl")
+
+[node name="ouja" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ouja"]
+position = Vector2(-72, -90)
+shape = SubResource("RectangleShape2D_jp048")
+
+[node name="crystal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crystal"]
+position = Vector2(3, -91)
+shape = SubResource("RectangleShape2D_ctpgp")
+
+[node name="candle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="candle"]
+position = Vector2(83, -91)
+shape = SubResource("RectangleShape2D_ptf86")
+
+[node name="battery" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="battery"]
+position = Vector2(169, -90)
+shape = SubResource("RectangleShape2D_ge4d2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="exit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+position = Vector2(-193, -237)
+shape = SubResource("RectangleShape2D_100s2")

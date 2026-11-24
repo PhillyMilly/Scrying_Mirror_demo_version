@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw7qc2farg8tx"]
+
+[ext_resource type="Script" uid="uid://cllg3h53piua3" path="res://scripts/ghost_bar_system/GhostBar.gd" id="1_rhu25"]
+
+[node name="GhostBarManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rhu25")

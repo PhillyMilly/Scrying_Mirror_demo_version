@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://chng4yabql6kt"]
+
+[ext_resource type="PackedScene" uid="uid://uvaohjp1y351" path="res://scenes/dialog/dialog_area.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dp8t3lypsy2xk" path="res://scenes/table/table.tscn" id="2_lnu2h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Table" parent="." instance=ExtResource("2_lnu2h")]
+
+[node name="DialogArea2" parent="Table" instance=ExtResource("2_lbhrr")]
+offset_left = -484.0
+offset_top = 294.0
+offset_right = 475.0
+offset_bottom = 506.0

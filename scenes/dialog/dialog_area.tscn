@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://uvaohjp1y351"]
+
+[ext_resource type="Script" uid="uid://cwutocm71munc" path="res://scenes/dialog/display.gd" id="1_kagw3"]
+
+[node name="DialogArea" type="RichTextLabel"]
+offset_right = 318.0
+offset_bottom = 75.0
+bbcode_enabled = true
+script = ExtResource("1_kagw3")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://tbw7ghxnl0h4"]
+
+[ext_resource type="Script" uid="uid://1r5phw7tgs56" path="res://scripts/minigames/candle/candle_minigame.gd" id="1_tbkiy"]
+[ext_resource type="PackedScene" uid="uid://dsec1issmdlt2" path="res://scenes/minigames/candle/candle0.tscn" id="2_0ovpc"]
+[ext_resource type="Texture2D" uid="uid://c3oirphmlbx5d" path="res://assets/sprites/minigames/crystal/background.png" id="2_n0jf1"]
+[ext_resource type="PackedScene" uid="uid://ykw5amlhoi0f" path="res://scenes/minigames/candle/lighter.tscn" id="2_tbkiy"]
+[ext_resource type="PackedScene" uid="uid://43s82a8fyn2u" path="res://scenes/minigames/candle/candle1.tscn" id="3_aixam"]
+[ext_resource type="PackedScene" uid="uid://d2221qisctic0" path="res://scenes/minigames/candle/candle2.tscn" id="4_pbe1u"]
+
+[node name="candle_minigame" type="Node2D"]
+script = ExtResource("1_tbkiy")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("2_n0jf1")
+
+[node name="candle0" parent="." instance=ExtResource("2_0ovpc")]
+position = Vector2(-79, -4)
+monitorable = true
+
+[node name="candle1" parent="." instance=ExtResource("3_aixam")]
+position = Vector2(-2, -20)
+monitorable = true
+
+[node name="candle2" parent="." instance=ExtResource("4_pbe1u")]
+position = Vector2(70, -3)
+monitorable = true
+
+[node name="lighter" parent="." instance=ExtResource("2_tbkiy")]
+position = Vector2(45, -36)
+
+[node name="Camera2D" type="Camera2D" parent="."]

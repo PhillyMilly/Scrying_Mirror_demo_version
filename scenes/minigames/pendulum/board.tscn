@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbhctmaw5kshc"]
+
+[ext_resource type="Texture2D" uid="uid://hnghashh3xtw" path="res://assets/trash/pendulum/board.png" id="1_5lbf1"]
+
+[node name="board" type="StaticBody2D"]
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -4)
+scale = Vector2(2.4, 1.33333)
+texture = ExtResource("1_5lbf1")

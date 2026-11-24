@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2ojiabcl6cem"]
+
+[ext_resource type="Script" uid="uid://cnys5yy0qy3k" path="res://scripts/minigames/bowl/bowl_minigame.gd" id="1_co81a"]
+[ext_resource type="PackedScene" uid="uid://i3bago4ibdky" path="res://scenes/minigames/bowl/bowl.tscn" id="2_kvo84"]
+[ext_resource type="Texture2D" uid="uid://dldlt2dxdwwjv" path="res://assets/sprites/minigames/minigames_table_bg.png" id="2_kwvkv"]
+[ext_resource type="PackedScene" uid="uid://b4vt10ou4642l" path="res://scenes/minigames/bowl/stick.tscn" id="3_gbrkb"]
+[ext_resource type="AudioStream" uid="uid://bk4s1c8ri6lep" path="res://assets/sounds/minigames/bell/hi.wav" id="4_v2lhi"]
+[ext_resource type="AudioStream" uid="uid://x26xm1aexdw0" path="res://assets/sounds/minigames/bell/low.wav" id="5_kwvkv"]
+[ext_resource type="AudioStream" uid="uid://c2luqnjjwdwr1" path="res://assets/sounds/minigames/bell/perfect.wav" id="6_3kbhf"]
+
+[node name="BowlMinigame" type="Node2D"]
+script = ExtResource("1_co81a")
+
+[node name="BG" type="Sprite2D" parent="."]
+texture = ExtResource("2_kwvkv")
+
+[node name="bowl" parent="." instance=ExtResource("2_kvo84")]
+
+[node name="Stick" parent="." instance=ExtResource("3_gbrkb")]
+position = Vector2(48, 16)
+
+[node name="Hi" type="AudioStreamPlayer" parent="Stick"]
+stream = ExtResource("4_v2lhi")
+
+[node name="Low" type="AudioStreamPlayer" parent="Stick"]
+stream = ExtResource("5_kwvkv")
+
+[node name="Perfect" type="AudioStreamPlayer" parent="Stick"]
+stream = ExtResource("6_3kbhf")
+
+[node name="Camera2D" type="Camera2D" parent="."]

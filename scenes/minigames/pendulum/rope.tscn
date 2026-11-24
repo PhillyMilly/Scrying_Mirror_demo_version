@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdasn3se8k08f"]
+
+[ext_resource type="Texture2D" uid="uid://cdj2g3pve23vl" path="res://assets/sprites/minigames/pendulum/rope.png" id="1_uem2o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ct1ab"]
+radius = 2.0
+height = 130.0
+
+[node name="rope" type="RigidBody2D"]
+mass = 0.15
+
+[node name="Rope" type="Sprite2D" parent="."]
+position = Vector2(-3.55271e-15, -1.50001)
+scale = Vector2(1.025, 1.35714)
+texture = ExtResource("1_uem2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ct1ab")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cshq157dvqsiw"]
+
+[ext_resource type="Script" uid="uid://bubav7db2ghwb" path="res://scripts/job_selection/job_selection.gd" id="1_ge7hf"]
+[ext_resource type="Texture2D" uid="uid://bugh1sw2ikfke" path="res://assets/trash/test/placeholder_table.png" id="2_lo28u"]
+
+[node name="JobSelection" type="Node2D"]
+script = ExtResource("1_ge7hf")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_lo28u")
+
+[node name="Tutorialma" type="Button" parent="."]
+offset_left = -45.0
+offset_top = -72.0
+offset_right = 46.0
+offset_bottom = -41.0
+text = "Tutorialma"
+
+[node name="Tbd" type="Button" parent="."]
+offset_left = -44.0
+offset_top = -27.0
+offset_right = 44.0
+offset_bottom = 2.0
+text = "Tbd"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="Tutorialma" to="." method="_on_tutorialma_pressed"]
+[connection signal="pressed" from="Tbd" to="." method="_on_tbd_pressed"]

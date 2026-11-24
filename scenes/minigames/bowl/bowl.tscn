@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://i3bago4ibdky"]
+
+[ext_resource type="Script" uid="uid://b8cghw3tv04vr" path="res://scripts/minigames/bowl/bowl.gd" id="1_hnavn"]
+[ext_resource type="Texture2D" uid="uid://4iv17j43ryeh" path="res://assets/sprites/minigames/bowl/bowl.png" id="2_wa7kf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnavn"]
+size = Vector2(96, 80)
+
+[node name="bowl" type="StaticBody2D"]
+script = ExtResource("1_hnavn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_hnavn")
+
+[node name="Bowl" type="Sprite2D" parent="."]
+texture = ExtResource("2_wa7kf")

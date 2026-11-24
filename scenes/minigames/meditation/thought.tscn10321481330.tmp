@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://o7fx7df3h6lh"]
+
+[ext_resource type="Script" uid="uid://xsu86wakd1w3" path="res://scripts/meditation_minigame/thought.gd" id="1_lo58u"]
+[ext_resource type="Texture2D" uid="uid://c1rma2ykmhxew" path="res://assets/trash/meditation_minigame/thought.png" id="1_xdl7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo58u"]
+size = Vector2(80, 60)
+
+[node name="Thought" type="Area2D"]
+script = ExtResource("1_lo58u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xdl7p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lo58u")

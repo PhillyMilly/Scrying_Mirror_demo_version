@@ -1,0 +1,386 @@
+[gd_scene load_steps=41 format=3 uid="uid://dp8t3lypsy2xk"]
+
+[ext_resource type="Texture2D" uid="uid://bugh1sw2ikfke" path="res://assets/trash/test/placeholder_table.png" id="1_02ppr"]
+[ext_resource type="Script" uid="uid://blkyy5k7g7mim" path="res://scripts/table/job_manager.gd" id="2_0y6hh"]
+[ext_resource type="Resource" uid="uid://daw6uqqvcahrs" path="res://resources/ShyGhostData.tres" id="3_8xt64"]
+[ext_resource type="PackedScene" uid="uid://cpr5g3chi1mq3" path="res://scenes/table/minigame_manager.tscn" id="3_qxbf1"]
+[ext_resource type="Script" uid="uid://dadmj4u4upb4h" path="res://scripts/table/tool_ui.gd" id="3_wpgb8"]
+[ext_resource type="Resource" uid="uid://b4dqaaakxl7fh" path="res://resources/NormalGhostData.tres" id="4_nfafe"]
+[ext_resource type="PackedScene" uid="uid://bw7qc2farg8tx" path="res://scenes/ghost_bar_system/GhostBarManager.tscn" id="4_wpgb8"]
+[ext_resource type="Resource" uid="uid://b354latyvq7xr" path="res://resources/AggressiveGhostData.tres" id="5_6tgsi"]
+[ext_resource type="Script" uid="uid://dlqnmkxrqurgn" path="res://scripts/minigames/minigame_entry.gd" id="7_3mjkh"]
+[ext_resource type="PackedScene" uid="uid://cv3po504muor2" path="res://scenes/minigames/meditation/MeditationMinigame.tscn" id="8_qye61"]
+[ext_resource type="Script" uid="uid://burx376f68dix" path="res://scripts/table/ghost_bar_ui.gd" id="9_nfafe"]
+[ext_resource type="PackedScene" uid="uid://tbw7ghxnl0h4" path="res://scenes/minigames/candle/candle_minigame.tscn" id="9_ponk7"]
+[ext_resource type="PackedScene" uid="uid://uvaohjp1y351" path="res://scenes/dialog/dialog_area.tscn" id="10_6tgsi"]
+[ext_resource type="PackedScene" uid="uid://cpalhtfl70exo" path="res://scenes/minigames/glass/glas_minigame.tscn" id="10_nqwrr"]
+[ext_resource type="PackedScene" uid="uid://c2ojiabcl6cem" path="res://scenes/minigames/bowl/bowl_minigame.tscn" id="11_fckiu"]
+[ext_resource type="PackedScene" uid="uid://ba8j1yvnqt38q" path="res://scenes/minigames/radio/radio_minigame.tscn" id="12_tymu5"]
+[ext_resource type="PackedScene" uid="uid://be6ikb51fv6ol" path="res://scenes/minigames/salt/salt_minigame.tscn" id="13_v2tov"]
+[ext_resource type="PackedScene" uid="uid://1votcmm5530w" path="res://scenes/minigames/pendulum/pendulum_minigame.tscn" id="14_7ytei"]
+[ext_resource type="PackedScene" uid="uid://b2pr02s6csv7v" path="res://scenes/minigames/ouija_board/ouija_board.tscn" id="15_kask2"]
+[ext_resource type="PackedScene" uid="uid://dljkj0ttjw6f6" path="res://scenes/minigames/crystal_orb/crystal_orb.tscn" id="16_s5l2n"]
+[ext_resource type="PackedScene" uid="uid://btlwawwe6pjef" path="res://scenes/minigames/spiritbox/spiritbox.tscn" id="17_ponk7"]
+[ext_resource type="Script" uid="uid://cbrv7eem2g412" path="res://scripts/table/information_manager.gd" id="18_qye61"]
+
+[sub_resource type="Resource" id="Resource_nqwrr"]
+script = ExtResource("7_3mjkh")
+key = "meditation"
+scene = ExtResource("8_qye61")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_vkoix"]
+script = ExtResource("7_3mjkh")
+key = "candlelight"
+scene = ExtResource("9_ponk7")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_cm5o7"]
+script = ExtResource("7_3mjkh")
+key = "glass"
+scene = ExtResource("10_nqwrr")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_oldaa"]
+script = ExtResource("7_3mjkh")
+key = "bowl"
+scene = ExtResource("11_fckiu")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_d3651"]
+script = ExtResource("7_3mjkh")
+key = "radio"
+scene = ExtResource("12_tymu5")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_3mjkh"]
+script = ExtResource("7_3mjkh")
+key = "saltcircle"
+scene = ExtResource("13_v2tov")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_qye61"]
+script = ExtResource("7_3mjkh")
+key = "pendulum"
+scene = ExtResource("14_7ytei")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_ponk7"]
+script = ExtResource("7_3mjkh")
+key = "ouija"
+scene = ExtResource("15_kask2")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_qseyv"]
+script = ExtResource("7_3mjkh")
+key = "crystalorb"
+scene = ExtResource("16_s5l2n")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="Resource" id="Resource_fckiu"]
+script = ExtResource("7_3mjkh")
+key = "spiritbox"
+scene = ExtResource("17_ponk7")
+metadata/_custom_type_script = "uid://dlqnmkxrqurgn"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfafe"]
+bg_color = Color(0.0328574, 0.107357, 0.161844, 1)
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tgsi"]
+bg_color = Color(0.1755, 0.293475, 0.39, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6tgsi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctt8d"]
+bg_color = Color(0.2448, 0.50616, 0.72, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkoix"]
+bg_color = Color(0.0313726, 0.105882, 0.160784, 1)
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm5o7"]
+bg_color = Color(0.74, 0.506653, 0.1036, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gelyt"]
+bg_color = Color(0.0313726, 0.105882, 0.160784, 1)
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chfws"]
+bg_color = Color(0.143775, 0.71, 0.0923, 1)
+
+[node name="Table" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_02ppr")
+
+[node name="JobManager" type="Node" parent="."]
+script = ExtResource("2_0y6hh")
+shy_ghost_data = ExtResource("3_8xt64")
+normal_ghost_data = ExtResource("4_nfafe")
+aggressive_ghost_data = ExtResource("5_6tgsi")
+
+[node name="MinigameManager" parent="JobManager" instance=ExtResource("3_qxbf1")]
+minigame_entries = Array[ExtResource("7_3mjkh")]([SubResource("Resource_nqwrr"), SubResource("Resource_vkoix"), SubResource("Resource_cm5o7"), SubResource("Resource_oldaa"), SubResource("Resource_d3651"), SubResource("Resource_3mjkh"), SubResource("Resource_qye61"), SubResource("Resource_ponk7"), SubResource("Resource_qseyv"), SubResource("Resource_fckiu")])
+
+[node name="GhostBarManager" parent="JobManager" instance=ExtResource("4_wpgb8")]
+offset_left = 18.0
+offset_top = 8.0
+offset_right = 18.0
+offset_bottom = 8.0
+
+[node name="InformationManager" type="Node" parent="JobManager"]
+unique_name_in_owner = true
+script = ExtResource("18_qye61")
+
+[node name="JobTimer" type="Timer" parent="JobManager"]
+wait_time = 60.0
+one_shot = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_wpgb8")
+
+[node name="Contact" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -880.0
+offset_top = -468.0
+offset_right = -603.0
+offset_bottom = -427.0
+text = "Contact"
+horizontal_alignment = 1
+
+[node name="Maintain" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -880.0
+offset_top = -325.0
+offset_right = -603.0
+offset_bottom = -276.0
+text = "Maintain
+"
+horizontal_alignment = 1
+
+[node name="Communicate" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -880.0
+offset_top = -173.0
+offset_right = -603.0
+offset_bottom = -124.0
+text = "Communicate
+"
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Contact" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Candlelight" type="Button" parent="UI/ButtonContainer/Contact"]
+layout_mode = 0
+offset_left = -849.0
+offset_top = -408.0
+offset_right = -787.0
+offset_bottom = -366.0
+text = "Candle
+"
+
+[node name="Glass" type="Button" parent="UI/ButtonContainer/Contact"]
+layout_mode = 0
+offset_left = -772.0
+offset_top = -407.0
+offset_right = -713.0
+offset_bottom = -368.0
+text = "Glass
+"
+
+[node name="Meditation" type="Button" parent="UI/ButtonContainer/Contact"]
+layout_mode = 0
+offset_left = -695.0
+offset_top = -406.0
+offset_right = -589.0
+offset_bottom = -369.0
+text = "Meditation"
+
+[node name="Maintain" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bowl" type="Button" parent="UI/ButtonContainer/Maintain"]
+layout_mode = 0
+offset_left = -766.0
+offset_top = -260.0
+offset_right = -720.0
+offset_bottom = -218.0
+text = "Bowl
+"
+
+[node name="Radio" type="Button" parent="UI/ButtonContainer/Maintain"]
+layout_mode = 0
+offset_left = -848.0
+offset_top = -258.0
+offset_right = -789.0
+offset_bottom = -220.0
+text = "Radio
+"
+
+[node name="Saltcircle" type="Button" parent="UI/ButtonContainer/Maintain"]
+layout_mode = 0
+offset_left = -702.0
+offset_top = -258.0
+offset_right = -613.0
+offset_bottom = -219.0
+text = "Saltcircle
+"
+
+[node name="Communication" type="Control" parent="UI/ButtonContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pendulum" type="Button" parent="UI/ButtonContainer/Communication"]
+layout_mode = 0
+offset_left = -906.0
+offset_top = -112.0
+offset_right = -808.0
+offset_bottom = -70.0
+text = "Pendulumn"
+
+[node name="Ouija" type="Button" parent="UI/ButtonContainer/Communication"]
+layout_mode = 0
+offset_left = -790.0
+offset_top = -114.0
+offset_right = -690.0
+offset_bottom = -72.0
+text = "Ouija Board"
+
+[node name="CrystalOrb" type="Button" parent="UI/ButtonContainer/Communication"]
+layout_mode = 0
+offset_left = -674.0
+offset_top = -113.0
+offset_right = -568.0
+offset_bottom = -70.0
+text = "CrystalOrb
+"
+
+[node name="Spiritbox" type="Button" parent="UI/ButtonContainer/Communication"]
+layout_mode = 0
+offset_left = -787.0
+offset_top = -59.0
+offset_right = -690.0
+offset_bottom = -16.0
+text = "Spiritbox
+"
+
+[node name="Close_Minigame" type="Button" parent="UI/ButtonContainer"]
+layout_mode = 0
+offset_left = -804.0
+offset_top = 65.0
+offset_right = -659.0
+offset_bottom = 109.0
+text = "CLOSE MINIGAME"
+
+[node name="GhostBarContainer" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_nfafe")
+ACTIVE_AGGRESSION_BAR_COLOR = Color(0.741176, 0.505882, 0.101961, 1)
+INACTIVE_AGGRESSION_BAR_COLOR = Color(0.38, 0.267267, 0.0418, 1)
+
+[node name="ContactBar" type="ProgressBar" parent="UI/GhostBarContainer"]
+layout_mode = 0
+offset_left = 564.0
+offset_top = -201.0
+offset_right = 911.0
+offset_bottom = -178.0
+theme_override_styles/background = SubResource("StyleBoxFlat_nfafe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6tgsi")
+value = 60.0
+
+[node name="MaintainBar" type="ProgressBar" parent="UI/GhostBarContainer"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = -201.0
+offset_right = 910.0
+offset_bottom = -178.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_6tgsi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ctt8d")
+value = 25.0
+
+[node name="AggressionBar" type="ProgressBar" parent="UI/GhostBarContainer"]
+layout_mode = 0
+offset_left = 564.0
+offset_top = -120.0
+offset_right = 911.0
+offset_bottom = -97.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vkoix")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cm5o7")
+value = 70.0
+
+[node name="TimerContainer" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/TimerContainer"]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 307.0
+offset_right = 902.0
+offset_bottom = 485.0
+theme_override_styles/background = SubResource("StyleBoxFlat_gelyt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_chfws")
+value = 55.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI/TimerContainer"]
+layout_mode = 0
+offset_left = 839.0
+offset_top = 275.0
+offset_right = 905.0
+offset_bottom = 306.0
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogArea" parent="." instance=ExtResource("10_6tgsi")]
+offset_left = -491.0
+offset_top = 293.0
+offset_right = 491.0
+offset_bottom = 516.0
+theme_override_colors/default_color = Color(0.0588235, 0.164706, 0.247059, 1)
+theme_override_colors/font_selected_color = Color(0.0588235, 0.164706, 0.247059, 1)
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+
+[connection signal="sig_gained_contact" from="JobManager" to="UI/GhostBarContainer" method="_on_job_manager_sig_gained_contact"]
+[connection signal="sig_lost_contact" from="JobManager" to="UI/GhostBarContainer" method="_on_job_manager_sig_lost_contact"]
+[connection signal="sig_lost_contact" from="JobManager" to="DialogArea" method="_on_job_manager_sig_lost_contact"]
+[connection signal="minigame_result" from="JobManager/MinigameManager" to="DialogArea" method="_on_minigame_manager_minigame_result"]

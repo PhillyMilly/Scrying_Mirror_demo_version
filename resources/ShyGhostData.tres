@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="GhostData" load_steps=2 format=3 uid="uid://daw6uqqvcahrs"]
+
+[ext_resource type="Script" uid="uid://wf4xc5i0t2ag" path="res://scripts/ghost_bar_system/ghost_data.gd" id="1_vayja"]
+
+[resource]
+script = ExtResource("1_vayja")
+ghost_type = 0
+maintain_multiplier = 1.2
+aggression_multiplier = 0.8
+contact_values = {
+0: 25.0,
+1: 50.0,
+2: 25.0
+}
+maintain_values = {
+3: 15.0,
+4: 20.0,
+5: 75.0
+}
+aggression_values = {
+0: -15.0,
+1: -20.0,
+2: 10.0,
+3: -50.0,
+4: -100.0,
+5: -50.0
+}

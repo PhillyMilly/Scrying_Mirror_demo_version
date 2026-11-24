@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://ba8j1yvnqt38q"]
+
+[ext_resource type="Script" uid="uid://b55xolc4s3xbw" path="res://scripts/minigames/radio/radio_minigame.gd" id="1_vldm8"]
+[ext_resource type="Texture2D" uid="uid://gamb35mldk0t" path="res://assets/sprites/minigames/minigame_bg2.png" id="2_bia5f"]
+[ext_resource type="Texture2D" uid="uid://dpfnxfuf2ar1g" path="res://assets/sprites/minigames/radio/radio.png" id="2_rh50c"]
+[ext_resource type="Script" uid="uid://vrpylk54oxn6" path="res://scripts/minigames/radio/radioknob.gd" id="4_o0pu1"]
+[ext_resource type="Texture2D" uid="uid://b1jmb7d4bloin" path="res://assets/sprites/minigames/radio/radio_slider.png" id="4_tm7vl"]
+[ext_resource type="AudioStream" uid="uid://bcki227am5i5y" path="res://assets/sounds/minigames/radio_minigame/true_song00.wav" id="6_rh50c"]
+[ext_resource type="Theme" uid="uid://dvhf6148iy666" path="res://resources/base_theme.tres" id="9_rh50c"]
+[ext_resource type="AudioStream" uid="uid://dohyjpal08onu" path="res://assets/sounds/minigames/radio_minigame/radio_song_fake2_01.wav" id="10_6dp6v"]
+[ext_resource type="AudioStream" uid="uid://bua177teftyyg" path="res://assets/sounds/minigames/radio_minigame/radio_song_fake1_02.wav" id="11_sq00w"]
+[ext_resource type="AudioStream" uid="uid://jabclh7506s5" path="res://assets/sounds/minigames/radio_minigame/static00.wav" id="12_muddu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm7vl"]
+size = Vector2(206.897, 13.6364)
+
+[node name="radio_minigame" type="Node2D"]
+script = ExtResource("1_vldm8")
+
+[node name="MinigameBg2" type="Sprite2D" parent="."]
+texture = ExtResource("2_bia5f")
+
+[node name="Radio" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -2)
+texture = ExtResource("2_rh50c")
+
+[node name="RadioKnob" type="Area2D" parent="."]
+position = Vector2(-18, 8)
+scale = Vector2(0.725, 0.733333)
+script = ExtResource("4_o0pu1")
+
+[node name="RadioKnob" type="Sprite2D" parent="RadioKnob"]
+position = Vector2(-121, -34)
+texture = ExtResource("4_tm7vl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RadioKnob"]
+visible = false
+position = Vector2(-26.2069, -34.0909)
+shape = SubResource("RectangleShape2D_tm7vl")
+
+[node name="AudioStreamPlayerTrue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rh50c")
+
+[node name="AudioStreamPlayerFake2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_6dp6v")
+
+[node name="AudioStreamPlayerFake1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_sq00w")
+
+[node name="AudioStreamPlayerStatic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_muddu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 63.0
+offset_top = -27.0
+offset_right = 85.0
+offset_bottom = -17.0
+theme = ExtResource("9_rh50c")
+theme_override_colors/font_color = Color(0.443137, 0.247059, 0.321569, 1)
+text = "88.00"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 99.0
+offset_top = -20.0
+offset_right = 115.0
+offset_bottom = -10.0
+theme = ExtResource("9_rh50c")
+theme_override_colors/font_color = Color(0.443137, 0.247059, 0.321569, 1)
+text = "Mhz"
