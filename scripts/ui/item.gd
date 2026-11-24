@@ -20,8 +20,9 @@ func _process(_delta: float) -> void:
 		texture = load(tex_path + "_hover.png");
 		offset.y = -3;
 	
-	if (!is_grabbing && is_hovering && Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+	if (!is_grabbing && !Globals.holding_item && is_hovering && Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		is_grabbing = true;
+		Globals.holding_item = true;
 	if (is_grabbing && Input.is_action_just_released("mouse_left")):
 		if !on_inventory:
 			position = anchor_position_temp;
@@ -29,6 +30,7 @@ func _process(_delta: float) -> void:
 			position = anchor_position;
 			anchor_position_temp = anchor_position;
 		is_grabbing = false;
+		Globals.holding_item = false;
 		if (is_hovering):
 			Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND);
 		else:

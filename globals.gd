@@ -3,6 +3,7 @@ extends Node
 var cursor_texture: Texture2D = preload("res://assets/sprites/ui/cursor.png");
 var hover_texture: Texture2D = preload("res://assets/sprites/ui/cursor_hover.png");
 var grab_texture: Texture2D = preload("res://assets/sprites/ui/cursor_grab.png");
+@onready var holding_item: bool = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

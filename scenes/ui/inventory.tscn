@@ -109,11 +109,11 @@ position = Vector2(19, 36)
 metadata/_edit_lock_ = true
 
 [node name="Orb" parent="." unique_id=198091738 instance=ExtResource("3_xeaml")]
-position = Vector2(-192, 60)
+position = Vector2(-208, -67)
 texture = ExtResource("4_5yy05")
 
 [node name="Pendulum" parent="." unique_id=121305980 instance=ExtResource("3_xeaml")]
-position = Vector2(-223, 59)
+position = Vector2(-227, -67)
 texture = ExtResource("5_ulvp7")
 
 [connection signal="area_entered" from="AnimatedSprite2D/Inventory" to="Orb" method="_on_inventory_area_entered"]
