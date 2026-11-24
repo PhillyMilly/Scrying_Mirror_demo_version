@@ -12,7 +12,7 @@ This project was developed exclusively on Windows and has not yet been tested or
 
 To install and test the current build, you will need:
 
-- [Godot Engine](https://godotengine.org/download/windows/) – preferably the latest version.
+- [Godot Engine](https://godotengine.org/download/windows/) – latest version.
 - [GitHub Desktop](https://github.com/apps/desktop?locale=de-de) – Git is also fine if you already have it set up.
 
 ### Setup
