@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 Dialog="*res://scripts/dialog/dialog.gd"
 Audio="*res://scripts/Audio/Audio.gd"
 Globals="*uid://yyquko1di128"
+Inventory="*uid://b46u85sgkagwn"
 
 [display]
 

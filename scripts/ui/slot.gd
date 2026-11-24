@@ -4,6 +4,7 @@ extends Area2D
 @onready var hover: Texture2D = preload("res://assets/sprites/ui/hover.png");
 @onready var orb: Item = $"../../Orb";
 @onready var pendulum: Item = $"../../Pendulum"
+@onready var slot: Area2D = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,8 +20,10 @@ func _on_mouse_entered() -> void:
 	sprite_2d.texture = hover;
 	if (orb.is_grabbing):
 		orb.anchor_position = global_position;
+		orb.new_slot = name;
 	if (pendulum.is_grabbing):
 		pendulum.anchor_position = global_position;
+		pendulum.new_slot = name;
 
 
 func _on_mouse_exited() -> void:

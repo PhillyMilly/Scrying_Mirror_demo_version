@@ -4,6 +4,8 @@ class_name  Item
 var is_hovering : bool = false;
 var is_grabbing : bool = false;
 var on_inventory: bool = false;
+var current_slot: StringName;
+var new_slot: StringName;
 @onready var tex_path: String = texture.resource_path.get_basename();
 @onready var anchor_position: Vector2 = position;
 @onready var anchor_position_temp: Vector2 = position;
@@ -24,11 +26,15 @@ func _process(_delta: float) -> void:
 		is_grabbing = true;
 		Globals.holding_item = true;
 	if (is_grabbing && Input.is_action_just_released("mouse_left")):
-		if !on_inventory:
-			position = anchor_position_temp;
-		else:
+		if on_inventory && Inventory.slots[new_slot] == "empty":
 			position = anchor_position;
 			anchor_position_temp = anchor_position;
+			if (current_slot):
+				Inventory.remove_item(current_slot);
+			Inventory.add_item(new_slot, name);
+			current_slot = new_slot;
+		else:
+			position = anchor_position_temp;
 		is_grabbing = false;
 		Globals.holding_item = false;
 		if (is_hovering):
